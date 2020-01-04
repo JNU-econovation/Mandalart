@@ -11,7 +11,7 @@ It is easy to use! Dont't be afraid!
     ```
     window
     ```
-    set PORT=3002 && node bin/www
+    set PORT=3001 && node bin/www
     ```
   2. front 폴더에 들어가서
     ```
