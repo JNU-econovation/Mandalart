@@ -7,7 +7,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      logged: false,
+      logged: true,
       onLogin: this.onLogin,
       onLogout: this.onLogout
     };
