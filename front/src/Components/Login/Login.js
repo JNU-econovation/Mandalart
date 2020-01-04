@@ -11,9 +11,15 @@ class Login extends Component {
       provider: ""
     };
   }
-  // Google Login
+  // success Google Login
   responseGoogle = res => {
-    console.log(res);
+    this.setState({
+      id: res.googleId,
+      name: res.profileObj.name,
+      provider: "google"
+    });
+    this.props.onLogin();
+    this.props.history.pusu("/");
   };
 
   // Login fail

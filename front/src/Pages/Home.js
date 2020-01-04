@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "../Components/Header/Header";
 import Login from "../Components/Login/Login";
-import { Router, BrowserRouter } from "react-router-dom";
+import Store from "../Store/store";
 
 class Home extends Component {
   constructor(props) {
@@ -31,10 +31,10 @@ class Home extends Component {
     const { logged, onLogout } = this.state;
 
     return (
-      <container>
+      <Store.Provider value={this.state}>
         <Header logged={logged} onLogout={onLogout} />
         <Login />
-      </container>
+      </Store.Provider>
     );
   }
 }
