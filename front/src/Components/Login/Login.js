@@ -27,6 +27,16 @@ class Login extends Component {
     console.error(err);
   };
 
+  doSignUp = () => {
+    const { id, name, provider } = this.state;
+
+    window.sessionStorage.setItem("id", id);
+    window.sessionStorage.setItem("name", name);
+    window.sessionStorage.setItem("provider", provider);
+    this.props.onLogin();
+    this.props.history.pusu("/");
+  };
+
   render() {
     return (
       <Container>
