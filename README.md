@@ -28,7 +28,7 @@ It is easy to use! Dont't be afraid!
   -> "branch를 새로 만들어서 이동한다" 라는 의미입니다.
 
 4. `pull request`를 날려줍니다.
-  pull request는 `자신이 작업하고 있는 branch` 에서 `master`로 날려주세요!
+  pull request는 `자신이 작업하고 있는 branch` 에서 `master`로 날려주세요! (경로 주의! 화살표 방향 주의!)
   
 5. 열심히 작업해서 한 페이지를 끝냈다구요? 그렇다면 이제 다음 branch로 이동해서 작업해볼까요? 
   여기서 집중! 하셔야 합니다.
