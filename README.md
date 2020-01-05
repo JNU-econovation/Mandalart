@@ -1,6 +1,6 @@
 # How to use Git!
 
-It is easy to use! Dont't be afraid! 
+It is easy to use! Don't be afraid! 
 
 1. master Branch(default) 초기 환경을 구축해두었습니다. (express, react) 이를 `clone or download` 합니다.
   실행방법
