@@ -4,7 +4,7 @@ It is easy to use! Don't be afraid!
 
 1. master Branch(default) 초기 환경을 구축해두었습니다. (express, react) 이를 `clone or download` 합니다.
   실행방법
-  1. react-backend 폴더에 들어가서
+    1. react-backend 폴더에 들어가서
     mac
     ```
     PORT=3001 npm start
@@ -13,7 +13,7 @@ It is easy to use! Don't be afraid!
     ```
     set PORT=3001 && node bin/www
     ```
-  2. front 폴더에 들어가서
+    2. front 폴더에 들어가서
     ```
     npm or yarn start
     ```
@@ -32,23 +32,23 @@ It is easy to use! Don't be afraid!
   
 5. 열심히 작업해서 한 페이지를 끝냈다구요? 그렇다면 이제 다음 branch로 이동해서 작업해볼까요? 
   여기서 집중! 하셔야 합니다.
-  1. 먼저 master branch로 다시 돌아갑니다.
-  ```
-  git checkout master
-  ```
-  2. 이곳에서 branch를 새롭게 만듭니다. 
-  앗! 명령어가 뭐였죠?
-  바로!
-  ```
-  git checkout -b {branch name}
-  ```
-  3. 이 branch에서 master에 있는 내용들을 가져옵니다.
+    1. 먼저 master branch로 다시 돌아갑니다.
+    ```
+    git checkout master
+    ```
+    2. 이곳에서 branch를 새롭게 만듭니다. 
+    앗! 명령어가 뭐였죠?
+    바로!
+    ```
+    git checkout -b {branch name}
+    ```
+    3. 이 branch에서 master에 있는 내용들을 가져옵니다.
     -> 다른 사람들이 master에서 작업한 것들은 내것과 합치는 과정이죠!
-  ```
-  git pull origin master
-  ```
-  master branch에 있는 내용들을 가져올거야! 라는 의미있니다.
-  4. 그럼 다시 이곳에서 작업을 시작합니다.
+    ```
+    git pull origin master
+    ```
+    master branch에 있는 내용들을 가져올거야! 라는 의미있니다.
+    4. 그럼 다시 이곳에서 작업을 시작합니다.
   
 그리고 위 과정을 계속 반복하시면 됩니다!
 
