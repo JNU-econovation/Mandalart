@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import Property_form from "../Components/Mandalart_Property/Property_form";
 
 class Add_mandalart extends Component {
   render() {
-    return <div>hello world!</div>;
+    return <Property_form />;
   }
 }
 
