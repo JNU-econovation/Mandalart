@@ -7,7 +7,9 @@ class Header extends Component {
   render() {
     return (
       <HeaderComponent>
-        <Icon icon={ic_keyboard_backspace} size={37} />
+        <NamedIcon>
+          <Icon icon={ic_keyboard_backspace} size={37} />
+        </NamedIcon>
         <Title>new Mandalart</Title>
       </HeaderComponent>
     );
@@ -16,6 +18,14 @@ class Header extends Component {
 
 export default Header;
 
-const HeaderComponent = styled.section``;
+const HeaderComponent = styled.section`
+  display: flex;
+  flex-direction: row;
+`;
 
-const Title = styled.text``;
+const NamedIcon = styled.image``;
+
+const Title = styled.text`
+  text-align: center;
+  display: flex;
+`;

@@ -29,7 +29,7 @@ class Property_form extends Component {
           <Label>cover image</Label>
           <Input></Input>
         </Named_Box>
-        <button>Submit</button>
+        <Button>Submit</Button>
       </Property_Box>
     );
   }
@@ -46,8 +46,44 @@ const Property_Box = styled.section`
   box-shadow: 0px 10px 50px #555;
 `;
 
-const Label = styled.text``;
+const Label = styled.text`
+  font-size: 1em;
+  margin-bottom: 0.25em;
+  display: flex;
+  justify-content: flex-start;
+`;
 
-const Input = styled.input``;
+const Input = styled.input`
+  padding: 10px 10px;
+  outline: none;
+`;
 
-const Named_Box = styled.section``;
+const Named_Box = styled.section`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 100%;
+`;
+
+const Button = styled.button`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: black;
+  color: white;
+  border: 2px solid #fff;
+  width: 100%;
+  margin-top: 1em;
+  padding: 8px 0px;
+  font-size: 1em;
+  letter-spacing: 1px;
+  margin-bottom: 0.25em;
+
+  :hover {
+    color: black;
+    background-color: white;
+    border: 2px solid;
+  }
+`;
