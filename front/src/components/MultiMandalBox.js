@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import "./Mandals.css";
+import SingleMandalBox from "./SingleMandalBox";
+import "./MultiMandalBox.css";
 
-class Mandals extends Component {
+class MultiMandalBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,18 +32,21 @@ class Mandals extends Component {
   }
   //제목 인쇄
   multi = () => {
+    //Object의 this,state의 key 값이므로 mine, friend, popular, new가 해당됨
     return Object.keys(this.state).map(key => {
-      let title = this.state[key].title;
       return (
-        <MultiMandalBox
-          title={title}
-          name={this.state[key].name}
-        ></MultiMandalBox>
+        <>
+          <h3> {this.state[key].title} </h3>
+          {this.state[key].name.map(value => {
+            return <SingleMandalBox name={value}></SingleMandalBox>;
+          })}
+          {/* <SingleMandalBox name={this.state[key].name}></SingleMandalBox> */}
+        </>
       );
-    }, []); //reduce 함수를 써서 리턴하는 배열들을 concat 함
+    }, []);
   };
   render() {
     return <>{this.multi()}</>;
   }
 }
-export default Mandals;
+export default MultiMandalBox;
