@@ -1,0 +1,48 @@
+import React, { Component } from "react";
+import "./Mandals.css";
+
+class Mandals extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mine: {
+        title: "나의 만다라트",
+        name: ["공부계획1", "공부계획2", "공부계획3", "공부계획4"]
+      }, //배열로 시도해볼것
+      friends: {
+        title: "친구들의 만다라트",
+        name: ["친구1", "친구2", "친구3", "친구4"]
+      },
+      popular: {
+        title: "주목받는 만다라트",
+        name: [
+          "기숙사 준비물 모음",
+          "포루투 한달살기 필수템",
+          "버킷리스트",
+          "세계일주 리스트"
+        ]
+      },
+      new: {
+        title: "신규 만다라트",
+        name: ["새해다짐1", "새해다짐2", "새해다짐3", "새해다짐4"]
+      }
+    };
+    this.multi = this.multi.bind(this); //multi의 this가 여기서 온 것임을 알려줌
+  }
+  //제목 인쇄
+  multi = () => {
+    return Object.keys(this.state).map(key => {
+      let title = this.state[key].title;
+      return (
+        <MultiMandalBox
+          title={title}
+          name={this.state[key].name}
+        ></MultiMandalBox>
+      );
+    }, []); //reduce 함수를 써서 리턴하는 배열들을 concat 함
+  };
+  render() {
+    return <>{this.multi()}</>;
+  }
+}
+export default Mandals;
