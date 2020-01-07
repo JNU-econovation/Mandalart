@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { RadioGroup, RadioButton } from "react-radio-buttons";
 
 class Property_form extends Component {
   render() {
@@ -20,7 +21,13 @@ class Property_form extends Component {
         </Named_Box>
         <Named_Box>
           <Label>알림 주기</Label>
-          <Input></Input>
+          <RadioGroup onChange={this.onChange} horizontal>
+            <RadioButton value="2weeks">2주</RadioButton>
+            <RadioButton value="1months">1개월</RadioButton>
+            <RadioButton value="3months">3개월</RadioButton>
+            <RadioButton value="6months">6개월</RadioButton>
+            <RadioButton value="1year">1년</RadioButton>
+          </RadioGroup>
         </Named_Box>
         <Named_Box>
           <Label>e-mail</Label>
