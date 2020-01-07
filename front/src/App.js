@@ -1,13 +1,15 @@
 import React from "react";
-import Home from "../src/Pages/Home";
-import Add_mandalart from "../src/Pages/Add_mandalart";
+import { Home, Add_mandalart, Edit_mandalart } from "./Pages";
+import { Route } from "react-router-dom";
 
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <Add_mandalart />
+    <div>
+      <Route exact path="/" component={Home} />
+      <Route path="/addmandal" component={Add_mandalart} />
+      <Route path="/editmandal" component={Edit_mandalart} />
     </div>
   );
 }

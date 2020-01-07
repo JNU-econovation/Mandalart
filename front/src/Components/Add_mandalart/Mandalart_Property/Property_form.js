@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 class Property_form extends Component {
   render() {
@@ -29,7 +30,9 @@ class Property_form extends Component {
           <Label>cover image</Label>
           <Input></Input>
         </Named_Box>
-        <Button>Submit</Button>
+        <Link to="/editmandal">
+          <Button>Submit</Button>
+        </Link>
       </Property_Box>
     );
   }
