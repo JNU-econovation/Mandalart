@@ -7,13 +7,17 @@ class All_mandal extends Component {
       <div>
         <table border="1">
           <tr>
-            <td>NW</td>
+            <Link to="/specificmandal">
+              <td>NW</td>
+            </Link>
             <td>North</td>
             <td>NE</td>
           </tr>
           <tr>
             <td>West</td>
-            <td>main</td>
+            <Link to="/mainmandal">
+              <td>main</td>
+            </Link>
             <td>East</td>
           </tr>
           <tr>
