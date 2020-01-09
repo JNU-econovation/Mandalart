@@ -1,13 +1,14 @@
 import React from "react";
-import { Home, Add_mandalart, Edit_mandalart } from "./Pages";
-import { Route } from "react-router-dom";
+import axios from "axios";
 
 function App() {
+  const submit = async () => {
+    const result = await axios.post("/", { number: 1 });
+    if (result.status === 200) alert("성공");
+  };
   return (
     <div>
-      <Route exact path="/" component={Home} />
-      <Route path="/addmandal" component={Add_mandalart} />
-      <Route path="/editmandal" component={Edit_mandalart} />
+      <button onClick={submit}>숫자 저장하기</button>
     </div>
   );
 }

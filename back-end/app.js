@@ -7,11 +7,6 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
-var mysql_dbc = require("./config/database")();
-var connection = mysql_dbc.init();
-
-mysql_dbc.test_open(connection);
-
 var app = express();
 
 // view engine setup
