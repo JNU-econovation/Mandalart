@@ -1,18 +1,28 @@
 import React, { Component } from "react";
 import "./MainHeader.css";
-import macbook from "../images/macbook.jpg";
+//import img from "../images/macbook.jpg";
 
 class MainHeader extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     url: "https://media.wired.com/photos/5dee9dde524c380008bedf86/master/pass/Gear_bblue_16-inch-MacBook-Pro-SOURCE-Apple.jpg"
+  //   };
+  getImageURL() {
+    const url = this.props.image;
+    return url;
+  }
+  getMessage() {
+    const mes = this.props.message;
+    return mes;
+  }
   render() {
+    const url = this.getImageURL();
+    const mes = this.getMessage();
     return (
       <header className="header">
-        <h3 id="main_title">MANDALART</h3>
-        <img
-          src={macbook}
-          width="100%"
-          height="100%"
-          alt="background_image"
-        ></img>
+        <h3 id="main_title">{mes}</h3>
+        <img src={url} width="100%" height="100%" alt="background_image"></img>
       </header>
     );
   }

@@ -3,14 +3,24 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Mainpage from "./pages/Mainpage";
 //import Guestpage from "./pages/Guestpage";
 import Test from "./pages/Test";
+import Guestpage from "./pages/Guestpage";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <Route exact path="/" component={Mainpage} />
-        <Route path="/test" component={Test} />
+        {/* BrowserRouter 즉 Router로 감싸야 라우팅을 할 수 있음 */}
+        <Switch>
+          {/* 하위 라우터 중 하나를 선택 */}
+          <Route exact path="/" component={Mainpage} />
+          <Route path="/test" component={Test} />
+          <Route path="/guest" component={Guestpage} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+        </Switch>
       </Router>
     );
   }
