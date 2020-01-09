@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./Header.css";
+import "./MainHeader.css";
 import macbook from "../images/macbook.jpg";
 
-class Header extends Component {
+class MainHeader extends Component {
   render() {
     return (
       <header className="header">
@@ -17,4 +17,4 @@ class Header extends Component {
     );
   }
 }
-export default Header;
+export default MainHeader;

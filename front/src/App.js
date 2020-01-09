@@ -1,15 +1,19 @@
-import React from "react";
-//import logo from "./logo.svg";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Main_page from "./pages/Main_page";
+import Mainpage from "./pages/Mainpage";
+//import Guestpage from "./pages/Guestpage";
+import Test from "./pages/Test";
 import "./App.css";
 
-function App() {
-  return (
-    <Router>
-      <Route exact path="/" component={Main_page} />
-    </Router>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Route exact path="/" component={Mainpage} />
+        <Route path="/test" component={Test} />
+      </Router>
+    );
+  }
 }
 
 export default App;

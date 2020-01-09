@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 // import axios from "axios";
-import Header from "../components/Header";
+import MainHeader from "../components/MainHeader";
 import MultiMandalBox from "../components/MultiMandalBox";
 
-class Main_page extends Component {
+class Mainpage extends Component {
   render() {
     return (
       <>
-        <Header />
+        <MainHeader />
         <MultiMandalBox />
       </>
     );
   }
 }
 
-export default Main_page;
+export default Mainpage;
