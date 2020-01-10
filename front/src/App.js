@@ -1,16 +1,26 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Mainpage from "./pages/Mainpage";
-//import Guestpage from "./pages/Guestpage";
 import Test from "./pages/Test";
 import Guestpage from "./pages/Guestpage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import "./App.css";
+import axios from "axios";
 
-class App extends Component {
-  render() {
-    return (
+function App() {
+  const load = async () => {
+    const result = await axios.post("/");
+    if (result.status === 200) {
+      console.dir(result.data);
+    }
+  };
+  return (
+    <>
+      <div>
+        {" "}
+        <button onClick={load}> 정보 불러오기</button>
+      </div>
       <Router>
         {/* BrowserRouter 즉 Router로 감싸야 라우팅을 할 수 있음 */}
         <Switch>
@@ -22,8 +32,8 @@ class App extends Component {
           <Route path="/signup" component={Signup} />
         </Switch>
       </Router>
-    );
-  }
+    </>
+  );
 }
 
 export default App;
