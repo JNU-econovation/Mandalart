@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Add_mandalart from "./Pages/Add_mandalart";
 
 function App() {
   const submit = async () => {
@@ -7,9 +8,12 @@ function App() {
     if (result.status === 200) alert("성공");
   };
   return (
+    /*
     <div>
       <button onClick={submit}>숫자 저장하기</button>
     </div>
+    */
+    <Add_mandalart />
   );
 }
 
