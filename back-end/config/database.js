@@ -1,25 +1,31 @@
-var mysql = require("mysql");
+var mysql = require("mysql2/promise");
 
-module.exports = function() {
-  return {
-    init: function() {
-      return mysql.createConnection({
-        port: "3306",
-        host: "localhost",
-        user: "root",
-        password: "Although!12",
-        database: "Mandalart"
-      });
-    },
+const pool = mysql.createPool({
+  host: "localhost",
+  user: "root",
+  database: "Mandalplan",
+  password: "Although!12",
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
+});
 
-    test_open: function(con) {
-      con.connect(function(err) {
-        if (err) {
-          console.error("mysql connection error :" + err);
-        } else {
-          console.info("mysql is connected successfully.");
-        }
-      });
+const Pool = {
+  on: async function(sql, parameter = []) {
+    try {
+      const connection = await pool.getConnection();
+      try {
+        const [rows] = await connection.execute(sql, parameter);
+        connection.release();
+        return rows;
+      } catch (error) {
+        connection.release();
+        throw error;
+      }
+    } catch (error) {
+      throw error;
     }
-  };
+  }
 };
+
+module.exports = Pool;
