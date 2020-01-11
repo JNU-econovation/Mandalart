@@ -26,8 +26,6 @@ class Property_form extends React.Component {
     this.addProperty().then(response => {
       console.log(response.data);
     });
-
-    /*
     this.setState({
       file: null,
       mandalName: "",
@@ -37,7 +35,6 @@ class Property_form extends React.Component {
       fileName: ""
     });
     window.location.reload();
-    */
   }
 
   handleFileChange(e) {
