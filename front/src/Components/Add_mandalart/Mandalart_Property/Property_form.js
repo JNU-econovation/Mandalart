@@ -4,7 +4,7 @@ import { post } from "axios";
 // import { Link } from "react-router-dom";
 import { RadioButton, RadioGroup } from "react-radio-buttons";
 
-class Property_form extends Component {
+class Property_form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,6 +26,8 @@ class Property_form extends Component {
     this.addProperty().then(response => {
       console.log(response.data);
     });
+
+    /*
     this.setState({
       file: null,
       mandalName: "",
@@ -35,6 +37,7 @@ class Property_form extends Component {
       fileName: ""
     });
     window.location.reload();
+    */
   }
 
   handleFileChange(e) {
@@ -51,9 +54,11 @@ class Property_form extends Component {
   }
 
   addProperty() {
-    const url = "/api/properties";
+    const url = "/api/property";
     const formData = new FormData();
-    formData.append("image", this.state.file);
+    console.log(this.state);
+
+    formData.append("image", this.state.fileName);
     formData.append("name", this.state.mandalName);
     formData.append("goal", this.state.mandalGoal);
     formData.append("description", this.state.mandalDescripton);
@@ -63,6 +68,7 @@ class Property_form extends Component {
         "content-type": "multipart/form-data"
       }
     };
+    console.log(formData);
     return post(url, formData, config);
   }
 
