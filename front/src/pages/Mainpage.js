@@ -8,7 +8,7 @@ class Mainpage extends Component {
   render() {
     return (
       <>
-        <LoadButton message="정보"></LoadButton>
+        <LoadButton></LoadButton>
         <MainHeader
           image="https://cdn.ppomppu.co.kr/zboard/data3/2019/0922/20190922122632_gwtyinan.jpg"
           message="MANDALART"

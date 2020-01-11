@@ -8,7 +8,7 @@ class MultiMandalBox extends Component {
     this.state = {
       mine: {
         title: "나의 만다라트",
-        name: ["공부계획1", "공부계획2", "공부계획3", "공부계획4"]
+        name: this.props.info
       }, //배열로 시도해볼것
       friends: {
         title: "친구들의 만다라트",
@@ -37,14 +37,15 @@ class MultiMandalBox extends Component {
       return (
         <>
           <h3> {this.state[key].title} </h3>
-          {this.state[key].name.map(value => {
-            return <SingleMandalBox name={value}></SingleMandalBox>;
-          })}
+          <SingleMandalBox name={this.state.name}></SingleMandalBox>
+          {/* {this.state[key].name.map(value => {
+            return <SingleMandalBox name={value}></SingleMandalBox>; */}
         </>
       );
     }, []);
   };
   render() {
+    console.log(this.state);
     return <>{this.multi()}</>;
   }
 }
