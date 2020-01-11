@@ -9,9 +9,9 @@ router.post("/", async function(req, res, next) {
   // const { number } = req.body;
   // const sql = `insert into mandalart values(${number})`;
   const sql = `select * from mandalart`;
-  const result = await pool.on(sql); //앞에 pool은 객체를 의미함
+  const result = await pool.on(sql);
   console.log(result);
-  res.status(200).send(result); // http의 상태는 200이고, end(send)는 return 이랑 비슷함.(값이 없으면 )
+  res.status(200).send(result); // http의 상태는 200이고, end(send)는 return 이랑 비슷함.(end나 send가 없으면 무한정대기)
 });
 
 module.exports = router;

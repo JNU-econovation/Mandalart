@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-// import axios from "axios";
 import MainHeader from "../components/MainHeader";
 import MultiMandalBox from "../components/MultiMandalBox";
+import LoadButton from "../components/LoadButton";
 
 class Mainpage extends Component {
   render() {
     return (
       <>
+        <LoadButton message="정보"></LoadButton>
         <MainHeader
-          image="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile1.uf.tistory.com%2Fimage%2F9961703F5A488F8F16C035"
+          image="https://cdn.ppomppu.co.kr/zboard/data3/2019/0922/20190922122632_gwtyinan.jpg"
           message="MANDALART"
         />
         <MultiMandalBox />
