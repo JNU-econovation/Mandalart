@@ -7,19 +7,26 @@ class LoadButton extends Component {
     return mes;
   }
   render() {
-    const load = async () => {
+    // const load = async () => {
+    //   const result = await axios.post("/");
+    //   if (result.status === 200) {
+    //     console.dir(result.data);
+    //   }
+    // };
+    // const mes = this.getMessage();
+    return (window.onload = async () => {
       const result = await axios.post("/");
       if (result.status === 200) {
         console.dir(result.data);
       }
-    };
-    const mes = this.getMessage();
-    return (
-      <div>
-        {" "}
-        <button onClick={load}> {mes} </button>
-      </div>
-    );
+    });
+    // <div>
+    //   {" "}
+    //   <button className="LoadButton" onClick={load}>
+    //     {" "}
+    //     {mes}{" "}
+    //   </button>
+    // </div>
   }
 }
 

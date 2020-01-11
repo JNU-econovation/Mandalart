@@ -40,7 +40,6 @@ class MultiMandalBox extends Component {
           {this.state[key].name.map(value => {
             return <SingleMandalBox name={value}></SingleMandalBox>;
           })}
-          {/* <SingleMandalBox name={this.state[key].name}></SingleMandalBox> */}
         </>
       );
     }, []);

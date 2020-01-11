@@ -15,8 +15,8 @@ class Guestpage extends Component {
   render() {
     return (
       <>
-        <Link to="/login">
-          <button class="button"> 로그인</button>
+        <Link to="/">
+          <button className="button"> 로그인</button>
         </Link>
         <MainHeader
           image="https://media.wired.com/photos/5dee9dde524c380008bedf86/master/pass/Gear_bblue_16-inch-MacBook-Pro-SOURCE-Apple.jpg"

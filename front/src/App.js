@@ -9,18 +9,8 @@ import "./App.css";
 //import axios from "axios";
 
 function App() {
-  // const load = async () => {
-  //   const result = await axios.post("/");
-  //   if (result.status === 200) {
-  //     console.dir(result.data);
-  //   }
-  // };
   return (
     <>
-      {/* <div>
-        {" "}
-        <button onClick={load}> 정보 불러오기</button>
-      </div> */}
       <Router>
         {/* BrowserRouter 즉 Router로 감싸야 라우팅을 할 수 있음 */}
         <Switch>

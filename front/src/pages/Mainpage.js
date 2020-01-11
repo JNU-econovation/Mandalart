@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import MainHeader from "../components/MainHeader";
 import MultiMandalBox from "../components/MultiMandalBox";
 import LoadButton from "../components/LoadButton";
+import "./Mainpage.css";
 
 class Mainpage extends Component {
   render() {
@@ -13,6 +14,7 @@ class Mainpage extends Component {
           message="MANDALART"
         />
         <MultiMandalBox />
+        {/* <Mainfooter></Mainfooter> */}
       </>
     );
   }
