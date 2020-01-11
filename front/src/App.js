@@ -1,5 +1,6 @@
 import React from "react";
 import Add_mandalart from "./Pages/Add_mandalart";
+import Home from "./Pages/Home";
 
 function App() {
   /*
@@ -14,7 +15,7 @@ function App() {
       <button onClick={submit}>숫자 저장하기</button>
     </div>
     */
-    <Add_mandalart />
+    <Home />
   );
 }
 
