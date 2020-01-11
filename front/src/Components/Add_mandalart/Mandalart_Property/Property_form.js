@@ -26,6 +26,15 @@ class Property_form extends Component {
     this.addProperty().then(response => {
       console.log(response.data);
     });
+    this.setState({
+      file: null,
+      mandalName: "",
+      mandalGoal: "",
+      mandalDescripton: "",
+      userEmail: "",
+      fileName: ""
+    });
+    window.location.reload();
   }
 
   handleFileChange(e) {
@@ -44,6 +53,7 @@ class Property_form extends Component {
   addProperty() {
     const url = "/api/properties";
     const formData = new FormData();
+    formData.append("image", this.state.file);
     formData.append("name", this.state.mandalName);
     formData.append("goal", this.state.mandalGoal);
     formData.append("description", this.state.mandalDescripton);
@@ -84,7 +94,7 @@ class Property_form extends Component {
             name="mandalDescription"
             value={this.state.mandalDescripton}
             onChange={this.handleValueChange}
-          />
+          ></input>
         </Named_Box>
         <Named_Box>
           <Label>알림 주기</Label>
@@ -107,7 +117,13 @@ class Property_form extends Component {
         </Named_Box>
         <Named_Box>
           <Label>cover image</Label>
-          <Input></Input>
+          <input
+            type="file"
+            name="fileName"
+            file={this.state.fileName}
+            value={this.state.fileName}
+            onChange={this.handleFileChange}
+          ></input>
         </Named_Box>
         <button type="submit">추가하기</button>
       </form>
