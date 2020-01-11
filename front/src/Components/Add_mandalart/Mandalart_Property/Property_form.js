@@ -15,6 +15,45 @@ class Property_form extends Component {
       userEmail: "",
       fileName: ""
     };
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleFileChange = this.handleFileChange.bind(this);
+    this.handleValueChange = this.handleValueChange.bind(this);
+    this.addProperty = this.addProperty.bind(this);
+  }
+
+  handleFormSubmit(e) {
+    e.preventDefault();
+    this.addProperty().then(response => {
+      console.log(response.data);
+    });
+  }
+
+  handleFileChange(e) {
+    this.setState({
+      file: e.target.files[0],
+      fileName: e.target.value
+    });
+  }
+
+  handleValueChange(e) {
+    let nextState = {};
+    nextState[e.target.name] = e.target.value;
+    this.setState(nextState);
+  }
+
+  addProperty() {
+    const url = "/api/properties";
+    const formData = new FormData();
+    formData.append("name", this.state.mandalName);
+    formData.append("goal", this.state.mandalGoal);
+    formData.append("description", this.state.mandalDescripton);
+    formData.append("email", this.state.userEmail);
+    const config = {
+      headers: {
+        "content-type": "multipart/form-data"
+      }
+    };
+    return post(url, formData, config);
   }
 
   render() {
@@ -72,9 +111,7 @@ class Property_form extends Component {
             <Input></Input>
           </Named_Box>
           <Link to="/editmandal">
-            <button type="submit">
-              <Button>Submit</Button>
-            </button>
+            <Button>Submit</Button>
           </Link>
         </Property_Box>
       </form>
