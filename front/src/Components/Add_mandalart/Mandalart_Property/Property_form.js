@@ -26,6 +26,7 @@ class Property_form extends React.Component {
     this.addProperty().then(response => {
       console.log(response.data);
     });
+    // 데이터 전송 이후 새로 고침
     this.setState({
       file: null,
       mandalName: "",

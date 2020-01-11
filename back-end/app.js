@@ -11,18 +11,13 @@ app.get("/api/hello", (req, res) => {
   res.send({ message: "Hello Express!" });
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
-
-const data = fs.readFileSync("../config/database.json");
+const data = fs.readFileSync("./config/database.json");
 const conf = JSON.parse(data);
 const mysql2 = require("mysql2");
 
-/*
 const multer = require("multer");
 const upload = multer({ dest: "./upload" });
-*/
 
-/*
 const connection = mysql2.createConnection({
   host: conf.host,
   user: conf.user,
@@ -31,32 +26,22 @@ const connection = mysql2.createConnection({
   database: conf.database
 });
 connection.connect();
-*/
 
-/*
-app.get("/api/property", (req, res) => {
-  connection.query("SELECT*FROM addmandal", (err, rows, fields) => {
-    res.send(rows);
-  });
-});
-app.use("/image", express.static("./upload"));
-*/
-
-/*
-app.post("/api/properties", upload.single("image"), (res, req) => {
+app.post("/api/property", upload.single("image"), (res, req) => {
   let sql = "INSERT INTO addmandal VALUES (null,?,?,?,?,?)";
-  let fileName = "/image/" + req.file.fileName;
-  let mandalName = req.body.mandalName;
-  let mandalGoal = req.body.mandalGoal;
-  let mandalDescription = req.body.mandalDescription;
-  let userEmail = req.body.userEmail;
-  let params = [fileName, mandalName, mandalGoal, mandalDescription, userEmail];
+  let image = "/image/" + req.file.fileName;
+  let name = req.body.mandalName;
+  let goal = req.body.mandalGoal;
+  let description = req.body.mandalDescription;
+  let mail = req.body.userEmail;
+  let params = [name, goal, description, mail, image];
   console.log("insert");
   connection.query(sql, params, (err, rows, fields) => {
     res.send(rows);
   });
 });
-*/
+
+app.listen(port, () => console.log(`Listening on port ${port}`));
 
 /*
 router.post("/api/properties", function(req, res, next) {

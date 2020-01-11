@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import Add_mandalart from "./Pages/Add_mandalart";
 
 function App() {
