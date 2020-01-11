@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { post } from "axios";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { RadioButton, RadioGroup } from "react-radio-buttons";
 
 class Property_form extends Component {
