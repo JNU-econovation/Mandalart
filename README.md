@@ -69,4 +69,12 @@ npm install react-router-doms --save
 
 두번째 다운받는 위치는 front안에서 다운 받는 것인지 확인하고 해주세요! front 밖에서 하면 nodemodule이 생겨서 매우 무거워지고 그러더라구요!
 
+# commit rule
+기능 추가 : feat:
+인터페이스 추가 : ui:
+오류 수정 : fix:
+잡다한 일 : chore
+리팩토링 : refactor:
+파일추가 : add:
+
 더 추가할 내용이 있으면 공지할게요! 
