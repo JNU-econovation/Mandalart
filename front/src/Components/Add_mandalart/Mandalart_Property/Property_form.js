@@ -59,61 +59,57 @@ class Property_form extends Component {
   render() {
     return (
       <form onSubmit={this.handleFormSubmit}>
-        <Property_Box>
-          <Named_Box>
-            <Label>이름</Label>
-            <input
-              type="text"
-              name="mandalName"
-              value={this.state.mandalName}
-              onChange={this.handleValueChange}
-            />
-          </Named_Box>
-          <Named_Box>
-            <Label>목표</Label>
-            <input
-              type="text"
-              name="mandalGoal"
-              value={this.state.mandalGoal}
-              onChange={this.handleValueChange}
-            />
-          </Named_Box>
-          <Named_Box>
-            <Label>설명</Label>
-            <input
-              type="text"
-              name="mandalDescription"
-              value={this.state.mandalDescripton}
-              onChange={this.handleValueChange}
-            ></input>
-          </Named_Box>
-          <Named_Box>
-            <Label>알림 주기</Label>
-            <RadioGroup onChange={this.onChange} horizontal>
-              <RadioButton value="2weeks">2주</RadioButton>
-              <RadioButton value="1months">1개월</RadioButton>
-              <RadioButton value="3months">3개월</RadioButton>
-              <RadioButton value="6months">6개월</RadioButton>
-              <RadioButton value="1year">1년</RadioButton>
-            </RadioGroup>
-          </Named_Box>
-          <Named_Box>
-            <Label>e-mail</Label>
-            <input
-              type="text"
-              name="userEmail"
-              value={this.state.userEmail}
-              onChange={this.handleValueChange}
-            ></input>
-          </Named_Box>
-          <Named_Box>
-            <Label>cover image</Label>
-            <Input></Input>
-          </Named_Box>
-          <Link to="/editmandal">
-            <Button>Submit</Button>
-          </Link>
-        </Property_Box>
+        <Named_Box>
+          <Label>이름</Label>
+          <input
+            type="text"
+            name="mandalName"
+            value={this.state.mandalName}
+            onChange={this.handleValueChange}
+          />
+        </Named_Box>
+        <Named_Box>
+          <Label>목표</Label>
+          <input
+            type="text"
+            name="mandalGoal"
+            value={this.state.mandalGoal}
+            onChange={this.handleValueChange}
+          />
+        </Named_Box>
+        <Named_Box>
+          <Label>설명</Label>
+          <input
+            type="text"
+            name="mandalDescription"
+            value={this.state.mandalDescripton}
+            onChange={this.handleValueChange}
+          />
+        </Named_Box>
+        <Named_Box>
+          <Label>알림 주기</Label>
+          <RadioGroup onChange={this.onChange} horizontal>
+            <RadioButton value="2weeks">2주</RadioButton>
+            <RadioButton value="1months">1개월</RadioButton>
+            <RadioButton value="3months">3개월</RadioButton>
+            <RadioButton value="6months">6개월</RadioButton>
+            <RadioButton value="1year">1년</RadioButton>
+          </RadioGroup>
+        </Named_Box>
+        <Named_Box>
+          <Label>e-mail</Label>
+          <input
+            type="text"
+            name="userEmail"
+            value={this.state.userEmail}
+            onChange={this.handleValueChange}
+          ></input>
+        </Named_Box>
+        <Named_Box>
+          <Label>cover image</Label>
+          <Input></Input>
+        </Named_Box>
+        <button type="submit">추가하기</button>
       </form>
     );
   }
