@@ -3,10 +3,12 @@ import axios from "axios";
 import Add_mandalart from "./Pages/Add_mandalart";
 
 function App() {
+  /*
   const submit = async () => {
     const result = await axios.post("/", { number: 1 });
     if (result.status === 200) alert("성공");
   };
+  */
   return (
     /*
     <div>
