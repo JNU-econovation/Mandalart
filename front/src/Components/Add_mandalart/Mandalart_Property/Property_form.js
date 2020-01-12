@@ -4,7 +4,7 @@ import { post } from "axios";
 // import { Link } from "react-router-dom";
 import { RadioButton, RadioGroup } from "react-radio-buttons";
 
-class Property_form extends React.Component {
+class Property_form extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,17 +13,17 @@ class Property_form extends React.Component {
       mandalGoal: "",
       mandalDescripton: "",
       userEmail: "",
-      fileName: ""
+      image: ""
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    this.handleFileChange = this.handleFileChange.bind(this);
+    //this.handleFileChange = this.handleFileChange.bind(this);
     this.handleValueChange = this.handleValueChange.bind(this);
     this.addProperty = this.addProperty.bind(this);
   }
 
   handleFormSubmit(e) {
     e.preventDefault();
-    this.addProperty().then(response => {
+    this.addProperty(e).then(response => {
       console.log(response.data);
     });
     // 데이터 전송 이후 새로 고침
@@ -33,17 +33,19 @@ class Property_form extends React.Component {
       mandalGoal: "",
       mandalDescripton: "",
       userEmail: "",
-      fileName: ""
+      image: ""
     });
     window.location.reload();
   }
 
+  /*
   handleFileChange(e) {
     this.setState({
       file: e.target.files[0],
       fileName: e.target.value
     });
   }
+  */
 
   handleValueChange(e) {
     let nextState = {};
@@ -51,22 +53,25 @@ class Property_form extends React.Component {
     this.setState(nextState);
   }
 
-  addProperty() {
+  addProperty(e) {
     const url = "/api/property";
-    const formData = new FormData();
-    console.log(this.state);
+    const formData = new FormData(e.target);
+    //    console.log(this.state);
 
-    formData.append("image", this.state.fileName);
+    /*
+    formData.append("image", this.state.image);
     formData.append("name", this.state.mandalName);
     formData.append("goal", this.state.mandalGoal);
-    formData.append("description", this.state.mandalDescripton);
+    formData.append("description", this.state.mandalDescription);
     formData.append("email", this.state.userEmail);
+    */
+
     const config = {
       headers: {
         "content-type": "multipart/form-data"
       }
     };
-    console.log(formData);
+    console.log(...formData);
     return post(url, formData, config);
   }
 
@@ -96,7 +101,7 @@ class Property_form extends React.Component {
           <input
             type="text"
             name="mandalDescription"
-            value={this.state.mandalDescripton}
+            value={this.state.mandalDescription}
             onChange={this.handleValueChange}
           ></input>
         </Named_Box>
@@ -122,11 +127,11 @@ class Property_form extends React.Component {
         <Named_Box>
           <Label>cover image</Label>
           <input
-            type="file"
-            name="fileName"
-            file={this.state.fileName}
-            value={this.state.fileName}
-            onChange={this.handleFileChange}
+            type="text"
+            name="image"
+            // file={this.state.fileName}
+            value={this.state.image}
+            onChange={this.handleValueChange}
           ></input>
         </Named_Box>
         <button type="submit">추가하기</button>

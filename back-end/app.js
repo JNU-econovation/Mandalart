@@ -16,7 +16,7 @@ const conf = JSON.parse(data);
 const mysql2 = require("mysql2");
 
 const multer = require("multer");
-const upload = multer({ dest: "./upload" });
+// const upload = multer({ dest: "./upload" });
 
 const connection = mysql2.createConnection({
   host: conf.host,
@@ -26,20 +26,23 @@ const connection = mysql2.createConnection({
   database: conf.database
 });
 connection.connect();
-
-app.post("/api/property", upload.single("image"), (res, req) => {
-  let sql = "INSERT INTO addmandal VALUES (null,?,?,?,?,?)";
-  let image = "/image/" + req.file.fileName;
-  let name = req.body.mandalName;
-  let goal = req.body.mandalGoal;
-  let description = req.body.mandalDescription;
-  let mail = req.body.userEmail;
-  let params = [name, goal, description, mail, image];
-  console.log("insert");
-  connection.query(sql, params, (err, rows, fields) => {
-    res.send(rows);
-  });
-});
+app.post(
+  "/api/property",
+  /*upload.single("image")*/ (res, req) => {
+    let sql =
+      "INSERT INTO addmandal(image, name, goal, description, mail) VALUES (?,?,?,?,?)";
+    let image = req.body.image;
+    let name = req.body.mandalName;
+    let goal = req.body.mandalGoal;
+    let description = req.body.mandalDescription;
+    let mail = req.body.userEmail;
+    let params = [image, name, goal, description, mail];
+    console.log("insert");
+    connection.query(sql, params, (err, rows, fields) => {
+      res.send(rows);
+    });
+  }
+);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 

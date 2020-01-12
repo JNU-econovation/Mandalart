@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { GoogleLogin } from "react-google-login";
 import styled from "styled-components";
+import { withRouter } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
@@ -11,20 +12,20 @@ class Login extends Component {
       provider: ""
     };
   }
-  // success Google Login
+
+  // Google Login success!
   responseGoogle = res => {
     this.setState({
       id: res.googleId,
       name: res.profileObj.name,
       provider: "google"
     });
-    this.props.onLogin();
-    this.props.history.pusu("/");
+    this.doSignUp();
   };
 
-  // Login fail
+  // Login Fail
   responseFail = err => {
-    console.error(err);
+    console.log(err);
   };
 
   doSignUp = () => {
@@ -34,7 +35,7 @@ class Login extends Component {
     window.sessionStorage.setItem("name", name);
     window.sessionStorage.setItem("provider", provider);
     this.props.onLogin();
-    this.props.history.pusu("/");
+    this.props.history.push("/");
   };
 
   render() {
@@ -52,7 +53,8 @@ class Login extends Component {
     );
   }
 }
-export default Login;
+
+export default withRouter(Login);
 
 const Container = styled.div`
   display: flex;

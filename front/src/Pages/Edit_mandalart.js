@@ -8,6 +8,7 @@ function Edit_mandalart() {
   return (
     <div>
       <Header />
+      <All_mandal />
     </div>
   );
 }
