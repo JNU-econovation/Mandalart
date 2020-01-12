@@ -1,5 +1,27 @@
+
+var createError = require("http-errors");
+var express = require("express");
+var path = require("path");
+var cookieParser = require("cookie-parser");
+var logger = require("morgan");
+
+var indexRouter = require("./routes/index");
+var usersRouter = require("./routes/users");
+
+// view engine setup
+// app.set("views", path.join(__dirname, "views"));
+// app.set("view engine", "jade");
+
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
+
+app.use("/", indexRouter);
+app.use("/users", usersRouter);
+
 const fs = require("fs");
-const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 3001;
@@ -44,23 +66,17 @@ app.post(
   }
 );
 
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get("env") === "development" ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render("error");
+});
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
-/*
-router.post("/api/properties", function(req, res, next) {
-  var body = req.body;
-  var fileName = req.body.fileName;
-  var mandalName = req.body.mandalName;
-  var mandalGoal = req.body.mandalGoal;
-  var mandalDescription = req.body.mandalDescription;
-  var userEmail = req.body.userEmail;
 
-  connection.query(
-    "insert into addmandal (name, goal, description, mail, image) values (?,?,?,?,?)",
-    [fileName, mandalName, mandalGoal, mandalDescription, userEmail],
-    function(err, rows) {
-      res.redirect("/api/properties");
-    }
-  );
-});
-*/
