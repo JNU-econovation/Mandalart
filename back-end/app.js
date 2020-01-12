@@ -1,41 +1,66 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const fs = require("fs");
+const express = require("express");
+const bodyParser = require("body-parser");
+const app = express();
+const port = process.env.PORT || 3001;
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+app.get("/api/hello", (req, res) => {
+  res.send({ message: "Hello Express!" });
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+const data = fs.readFileSync("./config/database.json");
+const conf = JSON.parse(data);
+const mysql2 = require("mysql2");
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+const multer = require("multer");
+// const upload = multer({ dest: "./upload" });
+
+const connection = mysql2.createConnection({
+  host: conf.host,
+  user: conf.user,
+  password: conf.password,
+  port: conf.port,
+  database: conf.database
 });
+connection.connect();
+app.post(
+  "/api/property",
+  /*upload.single("image")*/ (res, req) => {
+    let sql =
+      "INSERT INTO addmandal(image, name, goal, description, mail) VALUES (?,?,?,?,?)";
+    let image = req.body.image;
+    let name = req.body.mandalName;
+    let goal = req.body.mandalGoal;
+    let description = req.body.mandalDescription;
+    let mail = req.body.userEmail;
+    let params = [image, name, goal, description, mail];
+    console.log("insert");
+    connection.query(sql, params, (err, rows, fields) => {
+      res.send(rows);
+    });
+  }
+);
 
-module.exports = app;
+app.listen(port, () => console.log(`Listening on port ${port}`));
+
+/*
+router.post("/api/properties", function(req, res, next) {
+  var body = req.body;
+  var fileName = req.body.fileName;
+  var mandalName = req.body.mandalName;
+  var mandalGoal = req.body.mandalGoal;
+  var mandalDescription = req.body.mandalDescription;
+  var userEmail = req.body.userEmail;
+
+  connection.query(
+    "insert into addmandal (name, goal, description, mail, image) values (?,?,?,?,?)",
+    [fileName, mandalName, mandalGoal, mandalDescription, userEmail],
+    function(err, rows) {
+      res.redirect("/api/properties");
+    }
+  );
+});
+*/
