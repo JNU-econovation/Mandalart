@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 class All_mandal extends Component {
   render() {
@@ -7,17 +6,13 @@ class All_mandal extends Component {
       <div>
         <table border="1">
           <tr>
-            <Link to="/specificmandal">
-              <td>NW</td>
-            </Link>
+            <td>NW</td>
             <td>North</td>
             <td>NE</td>
           </tr>
           <tr>
             <td>West</td>
-            <Link to="/mainmandal">
-              <td>main</td>
-            </Link>
+            <td>main</td>
             <td>East</td>
           </tr>
           <tr>
@@ -26,6 +21,7 @@ class All_mandal extends Component {
             <td>SE</td>
           </tr>
         </table>
+        <button>submit</button>
       </div>
     );
   }
