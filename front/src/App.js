@@ -16,6 +16,7 @@ function App() {
       <button onClick={submit}>숫자 저장하기</button>
     </div>
     */
+    /**/
     <Edit_mandalart />
   );
 }
