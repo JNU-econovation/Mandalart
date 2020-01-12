@@ -1,0 +1,45 @@
+.mandals_oneMandal {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  transition: 200ms;
+  margin: 15px;
+}
+
+.mandals_oneMandal:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px #00000050;
+}
+
+.mandals_mandalImage {
+  box-sizing: border-box;
+  display: block;
+  border: 1px solid black;
+  width: 100%;
+  height: 280px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.mandals_mandalName {
+  box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid black;
+  width: 100%;
+  height: 20px;
+  margin: 0;
+  text-align: center;
+}
+
+.create_newmandal {
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.create_newmandal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
