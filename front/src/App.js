@@ -5,6 +5,8 @@ import Test from "./pages/Test";
 import Guestpage from "./pages/Guestpage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Personal_mandalart from "./pages/Personal_mandalart";
+
 import "./App.css";
 //import axios from "axios";
 
@@ -20,6 +22,10 @@ function App() {
           <Route path="/guest" component={Guestpage} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
+          <Route
+            path="/personal_mandalart/:mid"
+            component={Personal_mandalart}
+          />
         </Switch>
       </Router>
     </>

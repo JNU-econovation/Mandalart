@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Nameset = "/users";
 
@@ -16,19 +17,39 @@ class Namelist extends Component {
 
   render() {
     const { Namelist } = this.state;
+    //<Link
+    // to={{
+    //         pathname: `/Personal_mandal/${mid}`,
+    //         state: {
+    //           goal100,
+    //           goal10,
+    //           goal20,
+    //           goal30,
+    //           goal40
 
+    //         }
+    //       }}
+    //>
     if (Namelist.length > 0) {
       return Namelist.map(value => {
         return (
-          <div key={value.mid}>
-            <p>아이디 : {value.mid}</p>
-            <p>목표 : {value.goal100}</p>
-          </div>
+          <Link
+            to={{
+              pathname: `/personal_mandalart/${value.mid}`,
+              state: { value }
+            }}
+          >
+            <div key={value.mid}>
+              <p>아이디 : {value.mid}</p>
+              <p>목표 : {value.goal100}</p>
+            </div>
+          </Link>
         );
       });
     } else {
       return <h3>No Information</h3>;
     }
+    //</Link>
   }
 }
 
