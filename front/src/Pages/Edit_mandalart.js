@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../Components/Add_mandalart/Header";
-import All_mandal from "../Components/Edit_mandalart/All_mandal";
+import Header from "../components/Add_mandalart/Header";
+import All_mandal from "../components/Edit_mandalart/All_mandal";
 
 function Edit_mandalart() {
   return (

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Header from "../Components/Header/Header";
-import Login from "../Components/Login/Login";
+import Header from "../components/Header/Header";
+import Login from "../components/Login/Login";
 import Store from "../Store/store";
 
 class Home extends Component {
