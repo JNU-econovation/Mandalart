@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "./Namelist.css";
 
 // const Nameset = "/users";
@@ -14,23 +15,25 @@ class Namelist extends Component {
     let { data: Namelist } = await axios.post("/"); //root니까 index.js로 연결됨
     this.setState({ Namelist });
   }
-  // getMessage() {
-  //   const mes = this.props.message;
-  //   return mes;
-  // }
   render() {
-    // const mes = this.getMessage();
     const { Namelist } = this.state;
     if (Namelist.length > 0) {
       return Namelist.map(value => {
         return (
           <>
-            <div key={value.mid} className="mandals_oneMandal">
-              <div className="mandals_mandalImage">
-                만다라트 아이디 : {value.mid}
+            <Link
+              to={{
+                pathname: `/personal_mandalart/${value.mid}`,
+                state: { value }
+              }}
+            >
+              <div key={value.mid} className="mandals_oneMandal">
+                <div className="mandals_mandalImage">
+                  만다라트 아이디 : {value.mid}
+                </div>
+                <div className="mandals_mandalName">목표 : {value.goal100}</div>
               </div>
-              <div className="mandals_mandalName">목표 : {value.goal100}</div>
-            </div>
+            </Link>
           </>
         );
       });
