@@ -6,3 +6,16 @@
   left: 1172px;
   top: 36px;
 }
+/* .create_newmandal {
+  display: inline-block;
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: 400px;
+} */
+
+.my_mandalplan {
+  display: flex;
+  flex-wrap: wrap;
+}

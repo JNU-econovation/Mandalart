@@ -1,8 +1,14 @@
 .button {
   display: inline-block;
+  /* float: flex; */
   position: absolute;
-  width: 140px;
+  width: 80px;
   height: 30px;
-  left: 1172px;
+  right: 50px;
   top: 36px;
+  font-size: medium;
+}
+
+.guest {
+  position: relative;
 }

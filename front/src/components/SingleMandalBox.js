@@ -7,7 +7,9 @@ class SingleMandalBox extends Component {
       <>
         <div className="mandals_oneMandal">
           <div className="mandals_mandalImage" id="my_mandal">
-            1
+            <div className="create_newmandal-wrapper">
+              <div className="create_newmandal"> + </div>
+            </div>
           </div>
           <p id="mandals_mandalName" className="mandals_mandalName">
             {this.props.name}

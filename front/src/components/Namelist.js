@@ -26,7 +26,9 @@ class Namelist extends Component {
         return (
           <>
             <div key={value.mid} className="mandals_oneMandal">
-              <div className="mandals_mandalImage">아이디 : {value.mid}</div>
+              <div className="mandals_mandalImage">
+                만다라트 아이디 : {value.mid}
+              </div>
               <div className="mandals_mandalName">목표 : {value.goal100}</div>
             </div>
           </>
