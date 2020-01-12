@@ -1,4 +1,11 @@
-.div {
+.footer {
+  position: relative;
   background-color: gray;
   height: 200px;
+}
+.logoimg {
+  width: 259px;
+  height: 69px;
+  position: absolute;
+  top: calc((200px - 69px) / 2);
 }

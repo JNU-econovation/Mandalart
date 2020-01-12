@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./MainHeader.css";
+import { Link } from "react-router-dom";
 //import img from "../images/macbook.jpg";
 
 class MainHeader extends Component {
@@ -21,7 +22,11 @@ class MainHeader extends Component {
     const mes = this.getMessage();
     return (
       <header className="header">
-        <h3 id="main_title">{mes}</h3>
+        <h3 id="main_title">
+          <Link to="/" className="main_title">
+            <span className="main_title">{mes}</span>
+          </Link>
+        </h3>
         <img src={url} width="100%" height="100%" alt="background_image"></img>
       </header>
     );

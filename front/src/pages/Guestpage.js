@@ -16,13 +16,13 @@ import Namelist from "../components/Namelist";
 class Guestpage extends Component {
   render() {
     return (
-      <>
+      <div className="guest">
         <Link to="/">
-          <button className="button"> 로그인</button>
+          <button className="button"> LOG IN </button>
         </Link>
         <MainHeader
           image="https://images.unsplash.com/photo-1548391350-968f58dedaed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-          message="MANDALART"
+          message="MANDALPLAN"
         />
         {/* <MainHeader image={image1} />
         <MainHeader image={image2} />
@@ -30,7 +30,7 @@ class Guestpage extends Component {
         <h3>주목받는 만다라트</h3>
         <Namelist></Namelist>
         <Mainfooter></Mainfooter>
-      </>
+      </div>
     );
   }
 }
