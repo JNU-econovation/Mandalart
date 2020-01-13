@@ -8,7 +8,7 @@ import Signup from "./pages/Signup";
 import Personal_mandalart from "./pages/Personal_mandalart";
 //import "./App.css";
 
-import Edit_mandalart from "./pages/Edit_mandalart";
+import EditMandalart from "./pages/EditMandalart";
 
 function App() {
   /*
@@ -28,7 +28,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/personal_mandalart/:mid" component={Personal_mandalart} />
-        <Route path="/edit" component={Edit_mandalart} />
+        <Route path="/edit" component={EditMandalart} />
       </Switch>
     </Router>
   );

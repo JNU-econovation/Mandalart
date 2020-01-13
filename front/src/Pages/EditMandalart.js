@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Add_mandalart/Header";
 import All_mandal from "../components/Edit_mandalart/All_mandal";
 
-function Edit_mandalart() {
+function EditMandalart() {
   return (
     <div>
       <Header />
@@ -11,4 +11,4 @@ function Edit_mandalart() {
   );
 }
 
-export default Edit_mandalart;
+export default EditMandalart;
