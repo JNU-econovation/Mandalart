@@ -123,16 +123,6 @@ class Propertyform extends Component {
             onChange={this.handleValueChange}
           ></input>
         </Named_Box>
-        <Named_Box>
-          <Label>cover image</Label>
-          <input
-            type="text"
-            name="image"
-            // file={this.state.fileName}
-            value={this.state.image}
-            onChange={this.handleValueChange}
-          ></input>
-        </Named_Box>
         <button type="submit">추가하기</button>
       </form>
     );
