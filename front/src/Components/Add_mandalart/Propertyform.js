@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { post } from "axios";
-// import { Link } from "react-router-dom";
 import { RadioButton, RadioGroup } from "react-radio-buttons";
 
-class Property_form extends Component {
+class Propertyform extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -140,7 +139,7 @@ class Property_form extends Component {
   }
 }
 
-export default Property_form;
+export default Propertyform;
 
 const Property_Box = styled.section`
   width: 400px;
