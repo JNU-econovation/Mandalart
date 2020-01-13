@@ -7,9 +7,9 @@ function All_mandal() {
 
   const onSubmit = data => {
     axios.post("/api/mandalform", data);
+    console.log(data);
     console.log("insert success");
   };
-
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
