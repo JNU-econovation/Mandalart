@@ -17,19 +17,7 @@ class Namelist extends Component {
 
   render() {
     const { Namelist } = this.state;
-    //<Link
-    // to={{
-    //         pathname: `/Personal_mandal/${mid}`,
-    //         state: {
-    //           goal100,
-    //           goal10,
-    //           goal20,
-    //           goal30,
-    //           goal40
 
-    //         }
-    //       }}
-    //>
     if (Namelist.length > 0) {
       return Namelist.map(value => {
         return (
