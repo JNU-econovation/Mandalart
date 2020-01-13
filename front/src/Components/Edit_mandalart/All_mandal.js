@@ -6,6 +6,7 @@ function All_mandal() {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = data => {
+    console.log(data);
     axios.post("/api/mandalform", data);
     console.log("insert success");
   };
