@@ -1,13 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Mainpage from "./pages/Mainpage";
-import Test from "./pages/Test";
 import Guestpage from "./pages/Guestpage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Personal_mandalart from "./pages/Personal_mandalart";
-import Add_mandalart from "./pages/Add_mandalart";
-import Edit_mandalart from "./pages/Edit_mandalart";
+import AddMandalart from "./pages/AddMandalart";
+import EditMandalart from "./pages/EditMandalart";
 
 function App() {
   /*
@@ -30,8 +29,8 @@ function App() {
             path="/personal_mandalart/:mid"
             component={Personal_mandalart}
           />
-          <Route path="/edit" component={Edit_mandalart}></Route>
-          <Route path="/add" component={Add_mandalart}></Route>
+          <Route path="/edit" component={EditMandalart}></Route>
+          <Route path="/add" component={AddMandalart}></Route>
         </Switch>
       </Router>
     </>
