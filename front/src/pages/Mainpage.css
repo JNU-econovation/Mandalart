@@ -18,4 +18,11 @@
 .my_mandalplan {
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
+  height: 330px;
+  width: 100%;
+}
+
+.main_mandal h3 {
+  margin-left: 15px;
 }
