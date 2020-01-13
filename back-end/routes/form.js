@@ -3,7 +3,7 @@ var router = express.Router();
 var pool = require("../config/database");
 /* GET home page. */
 
-router.post("/mandalform", async function(req, res, next) {
+router.post("/api/mandalform", async function(req, res, next) {
   // post방식
   // REST API
   // const { number } = req.body;
