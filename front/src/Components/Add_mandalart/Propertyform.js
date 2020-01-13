@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { post } from "axios";
 import { RadioButton, RadioGroup } from "react-radio-buttons";
 
@@ -123,7 +124,9 @@ class Propertyform extends Component {
             onChange={this.handleValueChange}
           ></input>
         </Named_Box>
-        <button type="submit">추가하기</button>
+        <Link to="edit">
+          <button type="submit">추가하기</button>
+        </Link>
       </form>
     );
   }
