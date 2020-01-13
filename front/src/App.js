@@ -6,9 +6,8 @@ import Guestpage from "./pages/Guestpage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Personal_mandalart from "./pages/Personal_mandalart";
-//import "./App.css";
-
-import EditMandalart from "./pages/EditMandalart";
+import Add_mandalart from "./pages/Add_mandalart";
+import Edit_mandalart from "./pages/Edit_mandalart";
 
 function App() {
   /*
@@ -18,19 +17,24 @@ function App() {
   };
   */
   return (
-    <Router>
-      {/* BrowserRouter 즉 Router로 감싸야 라우팅을 할 수 있음 */}
-      <Switch>
-        {/* 하위 라우터 중 하나를 선택 */}
-        <Route exact path="/" component={Mainpage} />
-        <Route path="/test" component={Test} />
-        <Route path="/guest" component={Guestpage} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
-        <Route path="/personal_mandalart/:mid" component={Personal_mandalart} />
-        <Route path="/edit" component={EditMandalart} />
-      </Switch>
-    </Router>
+    <>
+      <Router>
+        {/* BrowserRouter 즉 Router로 감싸야 라우팅을 할 수 있음 */}
+        <Switch>
+          {/* 하위 라우터 중 하나를 선택 */}
+          <Route exact path="/" component={Mainpage} />
+          <Route path="/guest" component={Guestpage} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route
+            path="/personal_mandalart/:mid"
+            component={Personal_mandalart}
+          />
+          <Route path="/edit" component={Edit_mandalart}></Route>
+          <Route path="/add" component={Add_mandalart}></Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
