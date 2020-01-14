@@ -2,9 +2,9 @@ import React from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 
-function All_mandal() {
+function All_mandal(props) {
   const { register, handleSubmit } = useForm();
-
+  console.log(props.data);
   const onSubmit = data => {
     axios.post("/api/mandalform", data);
     console.log(data);

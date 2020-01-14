@@ -1,16 +1,43 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { post } from "axios";
 import { RadioButton, RadioGroup } from "react-radio-buttons";
 
 function Propertyform() {
   const { register, handleSubmit } = useForm();
 
+  const [name, setName] = useState("");
+  const [goal, setGoal] = useState("");
+  const [description, setDescription] = useState("");
+  const [mail, setMail] = useState("");
+
+  const onChangeName = e => {
+    setName(e.target.name);
+  };
+
+  const onChangeGoal = e => {
+    setGoal(e.target.goal);
+  };
+
+  const onChangeDescription = e => {
+    setDescription(e.target.description);
+  };
+
+  const onChangeEmail = e => {
+    setMail(e.target.mail);
+  };
+
   const onSubmit = data => {
-    axios("/api/mandalproperty", data);
+    axios
+      //  .post("/api/property", data)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
     console.log(data);
   };
   return (
@@ -18,11 +45,23 @@ function Propertyform() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <Named_Box>
           <Label>이름</Label>
-          <input type="text" name="name" id="name" ref={register} />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            ref={register}
+            onChange={onChangeName}
+          />
         </Named_Box>
         <Named_Box>
           <Label>목표</Label>
-          <input type="text" name="goal" id="goal" ref={register} />
+          <input
+            type="text"
+            name="goal"
+            id="goal"
+            ref={register}
+            onChange={onChangeGoal}
+          />
         </Named_Box>
         <Named_Box>
           <Label>알림 주기</Label>
@@ -41,13 +80,34 @@ function Propertyform() {
             name="description"
             id="description"
             ref={register}
+            onChange={onChangeDescription}
           />
         </Named_Box>
         <Named_Box>
           <Label>e-mail</Label>
-          <input type="text" name="mail" id="mail" ref={register} />
+          <input
+            type="text"
+            name="mail"
+            id="mail"
+            ref={register}
+            onChange={onChangeEmail}
+          />
         </Named_Box>
-        <button type="submit">추가하기</button>
+        <Link
+          to={{
+            pathname: "/add/mandalform",
+            state: {
+              name: name,
+              goal: goal,
+              description: description,
+              mail: mail
+            }
+          }}
+        >
+          <button type="submit" id="submit">
+            추가하기
+          </button>
+        </Link>
       </form>
     </div>
   );
