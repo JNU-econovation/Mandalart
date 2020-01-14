@@ -11,10 +11,6 @@
   display: inline-block;
   z-index: -5;
 }
-.cropping {
-}
-img {
-  z-index: 5;
-  width: 280px;
-  height: auto;
+/* .cropping {} */
+.mandals_mandalImage {
 }
