@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 function All_mandal(props) {
   const { register, handleSubmit } = useForm();
@@ -46,9 +47,11 @@ function All_mandal(props) {
             <input type="text" name="goal50" id="goal50" ref={register}></input>
           </tr>
         </table>
+        {/*<Link to={{ pathname: `/` }}>*/}
         <button type="submit" id="submit">
           submit
         </button>
+        {/*</Link>*/}
       </form>
     </div>
   );
