@@ -23,7 +23,7 @@ router.post("/api/mandal", async function(req, res, next) {
     req.body.goal70,
     req.body.goal80
   ];
-  const sql = `INSERT INTO test2 (
+  const sql = `INSERT INTO mandalart (
     name,
     goal,
     description,

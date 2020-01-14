@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import axios from "axios";
 import { useForm } from "react-hook-form";
-import { Link, history } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { RadioButton, RadioGroup } from "react-radio-buttons";
 
 function Propertyform() {

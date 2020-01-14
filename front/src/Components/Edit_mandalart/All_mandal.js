@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 
 function All_mandal(props) {
   const { register, handleSubmit } = useForm();
