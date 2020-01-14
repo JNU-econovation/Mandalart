@@ -1,113 +1,32 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import axios from "axios";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { post } from "axios";
 import { RadioButton, RadioGroup } from "react-radio-buttons";
 
-class Propertyform extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      file: null,
-      mandalName: "",
-      mandalGoal: "",
-      mandalDescripton: "",
-      userEmail: "",
-      image: ""
-    };
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    //this.handleFileChange = this.handleFileChange.bind(this);
-    this.handleValueChange = this.handleValueChange.bind(this);
-    this.addProperty = this.addProperty.bind(this);
-  }
+function Propertyform() {
+  const { register, handleSubmit } = useForm();
 
-  handleFormSubmit(e) {
-    e.preventDefault();
-    this.addProperty(e).then(response => {
-      console.log(response.data);
-    });
-    // 데이터 전송 이후 새로 고침
-    this.setState({
-      file: null,
-      mandalName: "",
-      mandalGoal: "",
-      mandalDescripton: "",
-      userEmail: "",
-      image: ""
-    });
-    window.location.reload();
-  }
-
-  /*
-  handleFileChange(e) {
-    this.setState({
-      file: e.target.files[0],
-      fileName: e.target.value
-    });
-  }
-  */
-
-  handleValueChange(e) {
-    let nextState = {};
-    nextState[e.target.name] = e.target.value;
-    this.setState(nextState);
-  }
-
-  addProperty(e) {
-    const url = "/api/property";
-    const formData = new FormData(e.target);
-    //    console.log(this.state);
-
-    /*
-    formData.append("image", this.state.image);
-    formData.append("name", this.state.mandalName);
-    formData.append("goal", this.state.mandalGoal);
-    formData.append("description", this.state.mandalDescription);
-    formData.append("email", this.state.userEmail);
-    */
-
-    const config = {
-      headers: {
-        "content-type": "multipart/form-data"
-      }
-    };
-    console.log(...formData);
-    return post(url, formData, config);
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.handleFormSubmit}>
+  const onSubmit = data => {
+    axios("/api/mandalproperty", data);
+    console.log(data);
+  };
+  return (
+    <div>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <Named_Box>
           <Label>이름</Label>
-          <input
-            type="text"
-            name="mandalName"
-            value={this.state.mandalName}
-            onChange={this.handleValueChange}
-          />
+          <input type="text" name="name" id="name" ref={register} />
         </Named_Box>
         <Named_Box>
           <Label>목표</Label>
-          <input
-            type="text"
-            name="mandalGoal"
-            value={this.state.mandalGoal}
-            onChange={this.handleValueChange}
-          />
-        </Named_Box>
-        <Named_Box>
-          <Label>설명</Label>
-          <input
-            type="text"
-            name="mandalDescription"
-            value={this.state.mandalDescription}
-            onChange={this.handleValueChange}
-          ></input>
+          <input type="text" name="goal" id="goal" ref={register} />
         </Named_Box>
         <Named_Box>
           <Label>알림 주기</Label>
-          <RadioGroup onChange={this.onChange} horizontal>
+          <RadioGroup horizontal>
             <RadioButton value="2weeks">2주</RadioButton>
             <RadioButton value="1months">1개월</RadioButton>
             <RadioButton value="3months">3개월</RadioButton>
@@ -116,20 +35,22 @@ class Propertyform extends Component {
           </RadioGroup>
         </Named_Box>
         <Named_Box>
-          <Label>e-mail</Label>
+          <Label>설명</Label>
           <input
             type="text"
-            name="userEmail"
-            value={this.state.userEmail}
-            onChange={this.handleValueChange}
-          ></input>
+            name="description"
+            id="description"
+            ref={register}
+          />
         </Named_Box>
-        <Link to="edit">
-          <button type="submit">추가하기</button>
-        </Link>
+        <Named_Box>
+          <Label>e-mail</Label>
+          <input type="text" name="mail" id="mail" ref={register} />
+        </Named_Box>
+        <button type="submit">추가하기</button>
       </form>
-    );
-  }
+    </div>
+  );
 }
 
 export default Propertyform;
