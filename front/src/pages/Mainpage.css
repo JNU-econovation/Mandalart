@@ -7,9 +7,15 @@
   top: 36px;
 }
 
-.my_mandalplan {
+.my_mandalplan,
+.friends,
+.popular,
+.new {
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
+  height: 347px;
+  width: 100%;
 }
 
 .main_mandal h3 {

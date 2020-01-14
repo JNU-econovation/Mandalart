@@ -1,0 +1,20 @@
+.mandals_oneMandal {
+  color: black;
+}
+.mandals_mandalImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.in {
+  display: inline-block;
+  z-index: -5;
+}
+.cropping {
+}
+img {
+  z-index: 5;
+  width: 280px;
+  height: auto;
+}

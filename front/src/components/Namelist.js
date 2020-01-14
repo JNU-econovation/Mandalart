@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Namelist.css";
+import img1 from "../images/image1.png";
 
 // const Nameset = "/users";
 
@@ -15,6 +16,7 @@ class Namelist extends Component {
     let { data: Namelist } = await axios.post("/"); //root니까 index.js로 연결됨
     this.setState({ Namelist });
   }
+
   render() {
     const { Namelist } = this.state;
     if (Namelist.length > 0) {
@@ -29,9 +31,14 @@ class Namelist extends Component {
             >
               <div key={value.mid} className="mandals_oneMandal">
                 <div className="mandals_mandalImage">
-                  만다라트 아이디 : {value.mid}
+                  <div className="in">만다라트 아이디 : {value.mid}</div>
+                  <div className="cropping">
+                    <img src={img1} alt="img"></img>
+                  </div>
                 </div>
-                <div className="mandals_mandalName">목표 : {value.goal100}</div>
+                <div className="mandals_mandalName">
+                  <div>목표 : {value.goal100}</div>
+                </div>
               </div>
             </Link>
           </>
