@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, history } from "react-router-dom";
 import { RadioButton, RadioGroup } from "react-radio-buttons";
 
 function Propertyform() {
@@ -14,32 +14,25 @@ function Propertyform() {
   const [mail, setMail] = useState("");
 
   const onChangeName = e => {
-    setName(e.target.name);
+    setName(e.target.value);
   };
 
   const onChangeGoal = e => {
-    setGoal(e.target.goal);
+    setGoal(e.target.value);
   };
 
   const onChangeDescription = e => {
-    setDescription(e.target.description);
+    setDescription(e.target.value);
   };
 
   const onChangeEmail = e => {
-    setMail(e.target.mail);
+    setMail(e.target.value);
   };
 
   const onSubmit = data => {
-    axios
-      //  .post("/api/property", data)
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => {
-        console.log(err);
-      });
     console.log(data);
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -93,9 +86,10 @@ function Propertyform() {
             onChange={onChangeEmail}
           />
         </Named_Box>
+
         <Link
           to={{
-            pathname: "/add/mandalform",
+            pathname: `/add/mandalform`,
             state: {
               name: name,
               goal: goal,

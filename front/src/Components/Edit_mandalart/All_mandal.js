@@ -4,11 +4,22 @@ import { useForm } from "react-hook-form";
 
 function All_mandal(props) {
   const { register, handleSubmit } = useForm();
-  console.log(props.data);
+  console.log(props);
   const onSubmit = data => {
-    axios.post("/api/mandalform", data);
+    data["name"] = props.data.name;
+    data["goal"] = props.data.goal;
+    data["description"] = props.data.description;
+    data["mail"] = props.data.mail;
     console.log(data);
-    console.log("insert success");
+    axios
+      .post("/api/mandal", data)
+      .then(res => {
+        console.log(res);
+        console.log("insert success");
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
   return (
     <div>
