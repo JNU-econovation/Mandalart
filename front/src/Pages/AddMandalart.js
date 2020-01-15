@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Header from "../Components/Add_mandalart/Header";
-import Property_form from "../Components/Add_mandalart/Mandalart_Property/Property_form";
+import Header from "../components/Add_mandalart/Header";
+import Property_form from "../components/Add_mandalart/Mandalart_Property/Property_form";
 import styled from "styled-components";
 
-class Add_mandalart extends Component {
+class AddMandalart extends Component {
   render() {
     return (
       <Layout>
@@ -16,7 +16,7 @@ class Add_mandalart extends Component {
   }
 }
 
-export default Add_mandalart;
+export default AddMandalart;
 
 const Layout = styled.body`
   display: flex;
