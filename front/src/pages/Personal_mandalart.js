@@ -7,6 +7,7 @@ import Mainfooter from "../components/Mainfooter";
 
 class Personal_mandalart extends Component {
   async componentDidMount() {
+    window.scrollTo(0, 0);
     console.log(this.props);
     const { location, history } = this.props;
   }

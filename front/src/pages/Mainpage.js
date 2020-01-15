@@ -26,16 +26,16 @@ class Mainpage extends Component {
             </Link>
             <Namelist></Namelist>
           </div>
+          <h3>친구의 만다라트</h3>
           <div className="friends">
-            <h3>친구의 만다라트</h3>
             <Namelist></Namelist>
           </div>
+          <h3>주목받는 만다라트</h3>
           <div className="popular">
-            <h3>주목받는 만다라트</h3>
             <Namelist></Namelist>
           </div>
+          <h3>신규 만다라트</h3>
           <div className="new">
-            <h3>신규 만다라트</h3>
             <Namelist></Namelist>
           </div>
         </div>
