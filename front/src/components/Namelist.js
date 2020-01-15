@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Namelist.css";
-import img1 from "../images/image3.png";
+import img1 from "../images/image1.png";
 import img2 from "../images/image2.png";
-import img3 from "../images/image1.png";
-import img4 from "../images/image5.jpeg";
-import img5 from "../images/image4.jpeg";
+import img3 from "../images/image3.png";
+import img4 from "../images/image4.jpeg";
+import img5 from "../images/image5.jpeg";
 import img6 from "../images/image6.jpeg";
 import img7 from "../images/image7.jpeg";
 import img8 from "../images/road.jpg";
@@ -48,7 +48,8 @@ class Namelist extends Component {
     if (Namelist.length > 0) {
       return Namelist.map(value => {
         return Object.keys(img).map(key => {
-          console.log(Math.floor(Math.random() * key) + 1);
+          // console.log(Math.floor(Math.random() * key) + 1);
+          console.log(`${value.goal100}`);
           return (
             <>
               <Link
@@ -65,12 +66,13 @@ class Namelist extends Component {
                       </h2> */}
                       <img
                         id="title_image"
+                        //순서만 랜덤이 될 수 있도록 수정할 것
                         src={img[Math.floor(Math.random() * key) + 1]}
                       ></img>
                     </div>
                   </div>
                   <div className="mandals_mandalName">
-                    <div>목표 : {value.goal100}</div>
+                    <div>{value.goal100}</div>
                   </div>
                 </div>
               </Link>

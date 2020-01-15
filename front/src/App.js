@@ -29,7 +29,7 @@ function App() {
             path="/personal_mandalart/:mid"
             component={Personal_mandalart}
           />
-          <Route path="/edit" component={EditMandalart}></Route>
+          <Route path="/add/mandalform" component={EditMandalart}></Route>
           <Route path="/add" component={AddMandalart}></Route>
         </Switch>
       </Router>

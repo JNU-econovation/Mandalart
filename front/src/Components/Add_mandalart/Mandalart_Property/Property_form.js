@@ -1,113 +1,63 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { post } from "axios";
-// import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { RadioButton, RadioGroup } from "react-radio-buttons";
 
-class Property_form extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      file: null,
-      mandalName: "",
-      mandalGoal: "",
-      mandalDescripton: "",
-      userEmail: "",
-      image: ""
-    };
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    //this.handleFileChange = this.handleFileChange.bind(this);
-    this.handleValueChange = this.handleValueChange.bind(this);
-    this.addProperty = this.addProperty.bind(this);
-  }
+function Propertyform() {
+  const { register, handleSubmit } = useForm();
 
-  handleFormSubmit(e) {
-    e.preventDefault();
-    this.addProperty(e).then(response => {
-      console.log(response.data);
-    });
-    // 데이터 전송 이후 새로 고침
-    this.setState({
-      file: null,
-      mandalName: "",
-      mandalGoal: "",
-      mandalDescripton: "",
-      userEmail: "",
-      image: ""
-    });
-    window.location.reload();
-  }
+  const [name, setName] = useState("");
+  const [goal, setGoal] = useState("");
+  const [description, setDescription] = useState("");
+  const [mail, setMail] = useState("");
 
-  /*
-  handleFileChange(e) {
-    this.setState({
-      file: e.target.files[0],
-      fileName: e.target.value
-    });
-  }
-  */
+  const onChangeName = e => {
+    setName(e.target.value);
+  };
 
-  handleValueChange(e) {
-    let nextState = {};
-    nextState[e.target.name] = e.target.value;
-    this.setState(nextState);
-  }
+  const onChangeGoal = e => {
+    setGoal(e.target.value);
+  };
 
-  addProperty(e) {
-    const url = "/api/property";
-    const formData = new FormData(e.target);
-    //    console.log(this.state);
+  const onChangeDescription = e => {
+    setDescription(e.target.value);
+  };
 
-    /*
-    formData.append("image", this.state.image);
-    formData.append("name", this.state.mandalName);
-    formData.append("goal", this.state.mandalGoal);
-    formData.append("description", this.state.mandalDescription);
-    formData.append("email", this.state.userEmail);
-    */
+  const onChangeEmail = e => {
+    setMail(e.target.value);
+  };
 
-    const config = {
-      headers: {
-        "content-type": "multipart/form-data"
-      }
-    };
-    console.log(...formData);
-    return post(url, formData, config);
-  }
+  const onSubmit = data => {
+    console.log(data);
+  };
 
-  render() {
-    return (
-      <form onSubmit={this.handleFormSubmit}>
+  return (
+    <div>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <Named_Box>
           <Label>이름</Label>
           <input
             type="text"
-            name="mandalName"
-            value={this.state.mandalName}
-            onChange={this.handleValueChange}
+            name="name"
+            id="name"
+            ref={register}
+            onChange={onChangeName}
           />
         </Named_Box>
         <Named_Box>
           <Label>목표</Label>
           <input
             type="text"
-            name="mandalGoal"
-            value={this.state.mandalGoal}
-            onChange={this.handleValueChange}
+            name="goal"
+            id="goal"
+            ref={register}
+            onChange={onChangeGoal}
           />
         </Named_Box>
         <Named_Box>
-          <Label>설명</Label>
-          <input
-            type="text"
-            name="mandalDescription"
-            value={this.state.mandalDescription}
-            onChange={this.handleValueChange}
-          ></input>
-        </Named_Box>
-        <Named_Box>
           <Label>알림 주기</Label>
-          <RadioGroup onChange={this.onChange} horizontal>
+          <RadioGroup horizontal>
             <RadioButton value="2weeks">2주</RadioButton>
             <RadioButton value="1months">1개월</RadioButton>
             <RadioButton value="3months">3개월</RadioButton>
@@ -116,31 +66,47 @@ class Property_form extends Component {
           </RadioGroup>
         </Named_Box>
         <Named_Box>
+          <Label>설명</Label>
+          <input
+            type="text"
+            name="description"
+            id="description"
+            ref={register}
+            onChange={onChangeDescription}
+          />
+        </Named_Box>
+        <Named_Box>
           <Label>e-mail</Label>
           <input
             type="text"
-            name="userEmail"
-            value={this.state.userEmail}
-            onChange={this.handleValueChange}
-          ></input>
+            name="mail"
+            id="mail"
+            ref={register}
+            onChange={onChangeEmail}
+          />
         </Named_Box>
-        <Named_Box>
-          <Label>cover image</Label>
-          <input
-            type="text"
-            name="image"
-            // file={this.state.fileName}
-            value={this.state.image}
-            onChange={this.handleValueChange}
-          ></input>
-        </Named_Box>
-        <button type="submit">추가하기</button>
+
+        <Link
+          to={{
+            pathname: `/add/mandalform`,
+            state: {
+              name: name,
+              goal: goal,
+              description: description,
+              mail: mail
+            }
+          }}
+        >
+          <button type="submit" id="submit">
+            추가하기
+          </button>
+        </Link>
       </form>
-    );
-  }
+    </div>
+  );
 }
 
-export default Property_form;
+export default Propertyform;
 
 const Property_Box = styled.section`
   width: 400px;
