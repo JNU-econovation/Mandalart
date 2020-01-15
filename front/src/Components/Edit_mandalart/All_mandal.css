@@ -1,0 +1,65 @@
+.table {
+  border-collapse: collapse;
+  width: 800px;
+  height: 400px;
+  text-align: center;
+}
+.main_title {
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+.out {
+  text-align: center;
+}
+.in {
+  display: inline-block;
+}
+.line3,
+.line6 {
+  border-bottom: 3px solid black;
+}
+#goal13,
+#goal14,
+#goal15,
+#goal83,
+#goal84,
+#goal85,
+#goal73,
+#goal74,
+#goal75 {
+  border-right: 3px solid black;
+}
+#goal31,
+#goal38,
+#goal37,
+#goal41,
+#goal48,
+#goal47,
+#goal51,
+#goal58,
+#goal57 {
+  border-left: 3px solid black;
+}
+#goal100 {
+  background-color: rgb(253, 174, 187);
+}
+#goal10,
+#goal20,
+#goal30,
+#goal40,
+#goal50,
+#goal60,
+#goal70,
+#goal80 {
+  background-color: rgba(255, 192, 203, 0.5);
+}
+
+.comment {
+  height: 500px;
+  background-color: rosybrown;
+}
+.tables input {
+  width: 50px;
+  height: 50px;
+}
