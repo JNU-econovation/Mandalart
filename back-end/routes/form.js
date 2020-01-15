@@ -21,7 +21,7 @@ router.post("/api/mandalform", async function(req, res, next) {
   ];
   const sql = `INSERT INTO mandaltest (goal100,goal10,goal20,goal30,goal40,goal50,goal60,goal70,goal80) VALUES (?,?,?,?,?,?,?,?,?)`;
   const result = await pool.on(sql, mandal);
-  console.log(result);
+  // console.log(result);
   res.status(200).send(result); // http의 상태는 200이고, end(send)는 return 이랑 비슷함.(end나 send가 없으면 무한정대기)
 });
 
