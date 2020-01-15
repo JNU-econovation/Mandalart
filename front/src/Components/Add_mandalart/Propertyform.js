@@ -35,72 +35,73 @@ function Propertyform() {
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Named_Box>
-          <Label>이름</Label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            ref={register}
-            onChange={onChangeName}
-          />
-        </Named_Box>
-        <Named_Box>
-          <Label>목표</Label>
-          <input
-            type="text"
-            name="goal"
-            id="goal"
-            ref={register}
-            onChange={onChangeGoal}
-          />
-        </Named_Box>
-        <Named_Box>
-          <Label>알림 주기</Label>
-          <RadioGroup horizontal>
-            <RadioButton value="2weeks">2주</RadioButton>
-            <RadioButton value="1months">1개월</RadioButton>
-            <RadioButton value="3months">3개월</RadioButton>
-            <RadioButton value="6months">6개월</RadioButton>
-            <RadioButton value="1year">1년</RadioButton>
-          </RadioGroup>
-        </Named_Box>
-        <Named_Box>
-          <Label>설명</Label>
-          <input
-            type="text"
-            name="description"
-            id="description"
-            ref={register}
-            onChange={onChangeDescription}
-          />
-        </Named_Box>
-        <Named_Box>
-          <Label>e-mail</Label>
-          <input
-            type="text"
-            name="mail"
-            id="mail"
-            ref={register}
-            onChange={onChangeEmail}
-          />
-        </Named_Box>
-
-        <Link
-          to={{
-            pathname: `/add/mandalform`,
-            state: {
-              name: name,
-              goal: goal,
-              description: description,
-              mail: mail
-            }
-          }}
-        >
-          <button type="submit" id="submit">
-            추가하기
-          </button>
-        </Link>
+        <Property_Box>
+          <Named_Box>
+            <Label>이름</Label>
+            <Input
+              type="text"
+              name="name"
+              id="name"
+              ref={register}
+              onChange={onChangeName}
+            />
+          </Named_Box>
+          <Named_Box>
+            <Label>목표</Label>
+            <Input
+              type="text"
+              name="goal"
+              id="goal"
+              ref={register}
+              onChange={onChangeGoal}
+            />
+          </Named_Box>
+          <Named_Box>
+            <Label>알림 주기</Label>
+            <RadioGroup horizontal>
+              <RadioButton value="2weeks">2주</RadioButton>
+              <RadioButton value="1months">1개월</RadioButton>
+              <RadioButton value="3months">3개월</RadioButton>
+              <RadioButton value="6months">6개월</RadioButton>
+              <RadioButton value="1year">1년</RadioButton>
+            </RadioGroup>
+          </Named_Box>
+          <Named_Box>
+            <Label>설명</Label>
+            <Input
+              type="text"
+              name="description"
+              id="description"
+              ref={register}
+              onChange={onChangeDescription}
+            />
+          </Named_Box>
+          <Named_Box>
+            <Label>e-mail</Label>
+            <Input
+              type="text"
+              name="mail"
+              id="mail"
+              ref={register}
+              onChange={onChangeEmail}
+            />
+          </Named_Box>
+          <Link
+            to={{
+              pathname: `/add/mandalform`,
+              state: {
+                name: name,
+                goal: goal,
+                description: description,
+                mail: mail
+              }
+            }}
+          >
+            <Button type="submit" id="submit">
+              SAVE
+            </Button>
+          </Link>
+        </Property_Box>
       </form>
     </div>
   );
