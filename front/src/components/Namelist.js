@@ -2,16 +2,22 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Namelist.css";
-import img1 from "../images/image1.png";
-import img2 from "../images/image2.png";
-import img3 from "../images/image3.png";
+import img1 from "../images/image1.jpg";
+import img2 from "../images/image2.jpg";
+import img3 from "../images/image3.jpg";
 import img4 from "../images/image4.jpeg";
 import img5 from "../images/image5.jpeg";
 import img6 from "../images/image6.jpeg";
 import img7 from "../images/image7.jpeg";
-import img8 from "../images/road.jpg";
-import img9 from "../images/mandalplan.PNG";
-import img10 from "../images/macbook.jpg";
+import img8 from "../images/image8.jpg";
+import img9 from "../images/image9.jpg";
+import img10 from "../images/image10.jpg";
+import img11 from "../images/image11.jpg";
+import img12 from "../images/image12.jpg";
+import img13 from "../images/road.jpg";
+import img14 from "../images/mandalplan.PNG";
+import img15 from "../images/macbook.jpg";
+
 // import * as Math from "lib/math";
 
 // import Image from "./Image";
@@ -28,9 +34,13 @@ img = {
   7: img7,
   8: img8,
   9: img9,
-  10: img10
+  10: img10,
+  11: img11,
+  12: img12,
+  13: img13,
+  14: img14,
+  15: img15
 };
-// let rand = Math.floor(Math.random() * 6);
 
 class Namelist extends Component {
   constructor(props) {
@@ -46,9 +56,10 @@ class Namelist extends Component {
   render() {
     const { Namelist } = this.state;
     if (Namelist.length > 0) {
-      return Namelist.map(value => {
-        return Object.keys(img).map(key => {
+      return Object.keys(img).map(key => {
+        return Namelist.map(value => {
           // console.log(Math.floor(Math.random() * key) + 1);
+          console.log("key", key);
           console.log(`${value.goal100}`);
           return (
             <>
@@ -61,13 +72,10 @@ class Namelist extends Component {
                 <div key={value.mid} className="mandals_oneMandal">
                   <div className="mandals_mandalImage">
                     <div className="mandals_image">
-                      {/* <h2>
-                        <div className="in">{value.mid}</div>
-                      </h2> */}
                       <img
                         id="title_image"
                         //순서만 랜덤이 될 수 있도록 수정할 것
-                        src={img[Math.floor(Math.random() * key) + 1]}
+                        src={img[Math.floor(Math.random() * 10) + 1]}
                       ></img>
                     </div>
                   </div>

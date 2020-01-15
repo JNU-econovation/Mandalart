@@ -1,11 +1,13 @@
 .table {
   border-collapse: collapse;
-  width: 800px;
-  height: 400px;
+  width: 900px;
+  height: 450px;
   text-align: center;
+  /* display: flex; */
+  /* justify-content: space-around; */
 }
 .main_title {
-  color: black;
+  color: inherit;
   text-align: center;
   text-decoration: none;
 }
@@ -58,4 +60,10 @@
 .comment {
   height: 500px;
   background-color: rosybrown;
+}
+td {
+  width: 100px;
+}
+tr {
+  height: 50px;
 }

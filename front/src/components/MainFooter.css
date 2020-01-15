@@ -9,3 +9,9 @@
   position: absolute;
   top: calc((200px - 69px) / 2);
 }
+/* .copyright {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */

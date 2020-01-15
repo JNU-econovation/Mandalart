@@ -8,7 +8,9 @@ class Mainfooter extends Component {
       <>
         <div className="footer">
           <img className="logoimg" src={logo} alt="logo"></img>
-          <div></div>
+          <div className="copyright">
+            Copyright Although <br /> Supported by ECONOVATION
+          </div>
         </div>
       </>
     );
