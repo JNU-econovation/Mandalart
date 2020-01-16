@@ -92,12 +92,13 @@ function All_mandal(props) {
                   id="goal18"
                   ref={register}
                 ></input>
-                <input
+                <Input
                   type="text"
                   name="goal10"
                   id="goal10"
                   ref={register}
-                ></input>
+                  placeholder="세부목표"
+                ></Input>
                 <input
                   type="text"
                   name="goal14"
@@ -110,12 +111,13 @@ function All_mandal(props) {
                   id="goal28"
                   ref={register}
                 ></input>
-                <input
+                <Input
                   type="text"
                   name="goal20"
                   id="goal20"
                   ref={register}
-                ></input>
+                  placeholder="세부목표"
+                ></Input>
                 <input
                   type="text"
                   name="goal24"
@@ -128,12 +130,13 @@ function All_mandal(props) {
                   id="goal38"
                   ref={register}
                 ></input>
-                <input
+                <Input
                   type="text"
                   name="goal30"
                   id="goal30"
                   ref={register}
-                ></input>
+                  placeholder="세부목표"
+                ></Input>
                 <input
                   type="text"
                   name="goal34"
@@ -154,36 +157,39 @@ function All_mandal(props) {
                   id="goal16"
                   ref={register}
                 ></input>
-                <input
+                <Arrow
                   type="text"
                   name="goal15"
                   id="goal15"
                   ref={register}
-                ></input>
+                  placeholder="↖"
+                ></Arrow>
                 <input
                   type="text"
                   name="goal27"
                   id="goal27"
                   ref={register}
                 ></input>
-                <input
+                <Arrow
                   type="text"
                   name="goal26"
                   id="goal26"
                   ref={register}
-                ></input>
+                  placeholder="↑"
+                ></Arrow>
                 <input
                   type="text"
                   name="goal25"
                   id="goal25"
                   ref={register}
                 ></input>
-                <input
+                <Arrow
                   type="text"
                   name="goal37"
                   id="goal37"
                   ref={register}
-                ></input>
+                  placeholder="↗"
+                ></Arrow>
                 <input
                   type="text"
                   name="goal36"
@@ -260,48 +266,53 @@ function All_mandal(props) {
                   id="goal88"
                   ref={register}
                 ></input>
-                <input
+                <Input
                   type="text"
                   name="goal80"
                   id="goal80"
                   ref={register}
-                ></input>
-                <input
+                  placeholder="세부목표"
+                ></Input>
+                <Arrow
                   type="text"
                   name="goal84"
                   id="goal84"
                   ref={register}
-                ></input>
+                  placeholder="←"
+                ></Arrow>
                 <input
                   type="text"
                   name="goal80"
                   id="goal80"
                   ref={register}
                 ></input>
-                <input
+                <Input
                   type="text"
                   name="goal100"
                   id="goal100"
                   ref={register}
-                ></input>
+                  placeholder="핵심목표"
+                ></Input>
                 <input
                   type="text"
                   name="goal40"
                   id="goal40"
                   ref={register}
                 ></input>
-                <input
+                <Arrow
                   type="text"
                   name="goal48"
                   id="goal48"
                   ref={register}
-                ></input>
-                <input
+                  placeholder="→"
+                ></Arrow>
+                <Input
                   type="text"
                   name="goal40"
                   id="goal40"
                   ref={register}
-                ></input>
+                  placeholder="세부목표"
+                ></Input>
                 <input
                   type="text"
                   name="goal44"
@@ -378,36 +389,39 @@ function All_mandal(props) {
                   id="goal72"
                   ref={register}
                 ></input>
-                <input
+                <Arrow
                   type="text"
                   name="goal73"
                   id="goal73"
                   ref={register}
-                ></input>
+                  placeholder="↙"
+                ></Arrow>
                 <input
                   type="text"
                   name="goal61"
                   id="goal61"
                   ref={register}
                 ></input>
-                <input
+                <Arrow
                   type="text"
                   name="goal62"
                   id="goal62"
                   ref={register}
-                ></input>
+                  placeholder="↓"
+                ></Arrow>
                 <input
                   type="text"
                   name="goal63"
                   id="goal63"
                   ref={register}
                 ></input>
-                <input
+                <Arrow
                   type="text"
                   name="goal51"
                   id="goal51"
                   ref={register}
-                ></input>
+                  placeholder="↘"
+                ></Arrow>
                 <input
                   type="text"
                   name="goal52"
@@ -428,12 +442,13 @@ function All_mandal(props) {
                   id="goal78"
                   ref={register}
                 ></input>
-                <input
+                <Input
                   type="text"
                   name="goal70"
                   id="goal70"
                   ref={register}
-                ></input>
+                  placeholder="세부목표"
+                ></Input>
                 <input
                   type="text"
                   name="goal74"
@@ -446,12 +461,13 @@ function All_mandal(props) {
                   id="goal68"
                   ref={register}
                 ></input>
-                <input
+                <Input
                   type="text"
                   name="goal60"
                   id="goal60"
                   ref={register}
-                ></input>
+                  placeholder="세부목표"
+                ></Input>
                 <input
                   type="text"
                   name="goal64"
@@ -464,12 +480,13 @@ function All_mandal(props) {
                   id="goal58"
                   ref={register}
                 ></input>
-                <input
+                <Input
                   type="text"
                   name="goal50"
                   id="goal50"
                   ref={register}
-                ></input>
+                  placeholder="세부목표"
+                ></Input>
                 <input
                   type="text"
                   name="goal54"
@@ -578,5 +595,18 @@ const Button = styled.button`
     color: black;
     background-color: white;
     border: 2px solid;
+  }
+`;
+
+const Input = styled.input`
+  ::placeholder {
+    text-align: center;
+  }
+`;
+
+const Arrow = styled.input`
+  ::placeholder {
+    text-align: center;
+    font-size: 30px;
   }
 `;
