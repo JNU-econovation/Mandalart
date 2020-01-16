@@ -10,6 +10,9 @@
   margin-left: 43%;
 }
 .main_title {
+  margin-left: -25px;
+  font-size: 3rem;
   color: white;
   text-decoration: none;
+  /* Link to 자체에 먹임 */
 }

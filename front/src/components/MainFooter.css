@@ -1,12 +1,13 @@
 .footer {
   position: relative;
-  background-color: gray;
+  background-color: rgba(214, 212, 212, 0.849);
   height: 200px;
+  text-align: center;
 }
 .logoimg {
   width: 259px;
   height: 69px;
-  position: absolute;
+  /* position: absolute; */
   top: calc((200px - 69px) / 2);
 }
 /* .copyright {

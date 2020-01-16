@@ -1,3 +1,9 @@
+.title {
+  font-size: 2rem;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
 .table {
   border-collapse: collapse;
   width: 900px;
@@ -6,7 +12,7 @@
   /* display: flex; */
   /* justify-content: space-around; */
 }
-.main_title {
+.link {
   color: inherit;
   text-align: center;
   text-decoration: none;
@@ -56,14 +62,39 @@
 #p80 {
   background-color: rgba(255, 192, 203, 0.5);
 }
-
-.comment {
-  height: 500px;
-  background-color: rosybrown;
+.mandal_comment {
+  /* background-color: rosybrown; */
+  text-align: left;
+  margin-left: 30px;
 }
 td {
   width: 100px;
 }
 tr {
   height: 50px;
+}
+.profile {
+  /* display: flex; */
+  justify-content: flex-end;
+  display: inline-flex;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px #00000050;
+}
+.comment_image {
+  float: left;
+  width: 10%;
+  height: 170px;
+}
+.comment_inside {
+  display: inline-flex;
+  background-color: yellow;
+  float: left;
+  width: 33%;
+}
+hr {
+  border: 1px solid rgb(189, 186, 186);
+  width: 97%;
 }

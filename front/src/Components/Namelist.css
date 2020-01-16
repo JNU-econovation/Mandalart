@@ -22,3 +22,7 @@
   height: 100%;
   object-fit: cover;
 }
+
+.mandals_mandalName {
+  font-size: 13px;
+}

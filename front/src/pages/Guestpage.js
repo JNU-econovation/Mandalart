@@ -28,7 +28,9 @@ class Guestpage extends Component {
         <MainHeader image={image2} />
         <MainHeader image={image3} /> */}
         <h3>주목받는 만다라트</h3>
-        <Namelist></Namelist>
+        <div className="popular_guest">
+          <Namelist></Namelist>
+        </div>
         <Mainfooter></Mainfooter>
       </div>
     );

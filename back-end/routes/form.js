@@ -3,7 +3,7 @@ var router = express.Router();
 var pool = require("../config/database");
 /* GET home page. */
 
-router.post("/api/mandalform", async function(req, res, next) {
+router.post("/api/mandal", async function(req, res, next) {
   // post방식
   // REST API
   // const { number } = req.body;
@@ -87,6 +87,7 @@ router.post("/api/mandalform", async function(req, res, next) {
     req.body.goal87,
     req.body.goal88
   ];
+  console.log(mandal);
   const sql = `INSERT INTO mandalart (
     name,
     goal,

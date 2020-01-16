@@ -12,3 +12,13 @@
 .guest {
   position: relative;
 }
+.guest > h3 {
+  margin-left: 15px;
+}
+.popular_guest {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  height: 343px;
+  width: 100%;
+}

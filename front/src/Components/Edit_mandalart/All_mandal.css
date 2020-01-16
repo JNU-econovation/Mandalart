@@ -1,15 +1,10 @@
 .table {
   border-collapse: collapse;
-  width: 800px;
-  height: 400px;
+  width: 900px;
+  height: 450px;
   text-align: center;
 }
-.main_title {
-  font-size: 2rem;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-}
+/* table속성이 잘 적용되지 않음 확인해볼것 */
 .out {
   text-align: center;
 }
@@ -56,11 +51,15 @@
   background-color: rgba(255, 192, 203, 0.5);
 }
 
+tr {
+  height: 50px;
+}
+
 .comment {
   height: 500px;
   background-color: rosybrown;
 }
 .tables input {
-  width: 50px;
+  width: 93px;
   height: 50px;
 }
