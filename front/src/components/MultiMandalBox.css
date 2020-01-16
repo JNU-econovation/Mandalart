@@ -12,7 +12,7 @@
 #main_title {
   color: white;
   font-size: xx-large;
-  text-align: center;
+  td-align: center;
 }
 
 .mandals {
@@ -30,7 +30,7 @@
   border: 1px solid black;
   width: 300px;
   height: 280px;
-  text-align: center;
+  td-align: center;
   margin: 15px;
   margin-bottom: 0px;
   padding: 10px;
@@ -39,7 +39,7 @@
   border: 1px solid black;
   width: 300px;
   height: 20px;
-  text-align: center;
+  td-align: center;
   margin: 15px;
   margin-top: 0px;
   padding: 10px;

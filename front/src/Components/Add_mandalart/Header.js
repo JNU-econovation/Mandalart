@@ -25,7 +25,7 @@ const HeaderComponent = styled.section`
 
 const NamedIcon = styled.image``;
 
-const Title = styled.text`
-  text-align: center;
+const Title = styled.td`
+  td-align: center;
   display: flex;
 `;

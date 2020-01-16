@@ -7,6 +7,7 @@ import Signup from "./pages/Signup";
 import Personal_mandalart from "./pages/Personal_mandalart";
 import AddMandalart from "./pages/AddMandalart";
 import EditMandalart from "./pages/EditMandalart";
+import PhoneForm from "./pages/test";
 
 function App() {
   /*
@@ -18,9 +19,7 @@ function App() {
   return (
     <>
       <Router>
-        {/* BrowserRouter 즉 Router로 감싸야 라우팅을 할 수 있음 */}
         <Switch>
-          {/* 하위 라우터 중 하나를 선택 */}
           <Route exact path="/" component={Mainpage} />
           <Route path="/guest" component={Guestpage} />
           <Route path="/login" component={Login} />
@@ -33,6 +32,7 @@ function App() {
           <Route path="/add" component={AddMandalart}></Route>
         </Switch>
       </Router>
+      {/* {<PhoneForm />} */}
     </>
   );
 }

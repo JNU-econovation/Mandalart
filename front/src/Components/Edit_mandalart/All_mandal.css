@@ -2,15 +2,15 @@
   border-collapse: collapse;
   width: 800px;
   height: 400px;
-  text-align: center;
+  td-align: center;
 }
 .main_title {
   color: black;
-  text-align: center;
-  text-decoration: none;
+  td-align: center;
+  td-decoration: none;
 }
 .out {
-  text-align: center;
+  td-align: center;
 }
 .in {
   display: inline-block;
@@ -59,7 +59,7 @@
   height: 500px;
   background-color: rosybrown;
 }
-.tables input {
+.tables td {
   width: 50px;
   height: 50px;
 }
