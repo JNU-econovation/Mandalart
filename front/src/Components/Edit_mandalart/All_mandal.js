@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./All_mandal.css";
 
@@ -714,6 +715,7 @@ function All_mandal(props) {
           submit
         </button>
         {/*</Link>*/}
+        <Link to="/">홈</Link>
       </form>
     </div>
   );
