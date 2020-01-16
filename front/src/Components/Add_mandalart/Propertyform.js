@@ -98,7 +98,7 @@ function Propertyform() {
             }}
           >
             <Button type="submit" id="submit">
-              SAVE
+              NEXT
             </Button>
           </Link>
         </Property_Box>
