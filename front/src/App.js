@@ -32,7 +32,6 @@ function App() {
           <Route path="/add" component={AddMandalart}></Route>
         </Switch>
       </Router>
-      {/* {<PhoneForm />} */}
     </>
   );
 }

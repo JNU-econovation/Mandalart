@@ -44,6 +44,7 @@ function Propertyform() {
               id="name"
               ref={register}
               onChange={onChangeName}
+              placeholder="ex) 2학기 목표"
             />
           </Named_Box>
           <Named_Box>
@@ -54,6 +55,7 @@ function Propertyform() {
               id="goal"
               ref={register}
               onChange={onChangeGoal}
+              placeholder="ex) 전문성 가지기"
             />
           </Named_Box>
           <Named_Box>
@@ -68,7 +70,7 @@ function Propertyform() {
           </Named_Box>
           <Named_Box>
             <Label>설명</Label>
-            <Input
+            <InputArea
               type="text"
               name="description"
               id="description"
@@ -84,6 +86,7 @@ function Propertyform() {
               id="mail"
               ref={register}
               onChange={onChangeEmail}
+              placeholder="mandalplan@gmail.com"
             />
           </Named_Box>
           <Link
@@ -110,7 +113,7 @@ function Propertyform() {
 export default Propertyform;
 
 const Property_Box = styled.section`
-  width: 400px;
+  width: 550px;
   display: flex;
   flex-direction: column;
   padding: 20px 40px;
@@ -127,6 +130,11 @@ const Label = styled.text`
 
 const Input = styled.input`
   padding: 10px 10px;
+  outline: none;
+`;
+
+const InputArea = styled.textarea`
+  height: 100px;
   outline: none;
 `;
 
